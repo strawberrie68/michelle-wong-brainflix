@@ -2,3 +2,54 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/typography" as *;
+
+.video {
+  &__player {
+    width: 100%;
+    border-radius: 0;
+  }
+  &__description {
+    padding: 1rem 0;
+  }
+  &__metadata {
+    @include border-position($position: bottom);
+    @include border-position($position: top);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    color: $primary-gray;
+    &--right {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      @include tablet {
+        flex-direction: row;
+        width: auto;
+      }
+    }
+    &--left {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      @include tablet {
+        flex-direction: row;
+        width: auto;
+      }
+    }
+  }
+  &__author &__info {
+    color: $primary-dark;
+    font-weight: 600;
+  }
+
+  &__views {
+    display: flex;
+    gap: 1rem;
+  }
+  &__likes {
+    display: flex;
+    gap: 1rem;
+  }
+}

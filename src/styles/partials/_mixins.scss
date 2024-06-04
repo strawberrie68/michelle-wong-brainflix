@@ -38,11 +38,15 @@
 }
 
 @mixin headingPadding {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 
   @include tablet {
-    padding-top: 2.25rem;
-    padding-bottom: 1.5rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1.5rem;
   }
+}
+
+@mixin border-position($position) {
+  border-#{$position}: 1px solid $secondary-gray;
 }
