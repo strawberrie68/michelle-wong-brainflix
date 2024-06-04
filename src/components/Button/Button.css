@@ -1,0 +1,26 @@
+.button {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #0095ff;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 47.9375rem) {
+  .button {
+    min-width: 9.375rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.button__icon {
+  flex-basis: 1rem;
+  padding-left: 0.5rem;
+}
+.button__body {
+  flex-basis: 100%;
+  text-align: center;
+}/*# sourceMappingURL=Button.css.map */
