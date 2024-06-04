@@ -120,26 +120,6 @@ body {
     min-height: 2.5rem;
   }
 }
-.logo {
-  max-height: 1.5625rem;
-  max-width: 7.5rem;
-}
-
-.search {
-  @extend .input-border;
-  flex-basis: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  &__icon {
-    flex-basis: 1rem;
-    max-width: 1rem;
-  }
-  &__input {
-    border: none;
-    flex-basis: 100%;
-  }
-}
 
 .nav {
   display: flex;
@@ -184,15 +164,5 @@ body {
     @include tablet {
       display: block;
     }
-  }
-}
-
-.avatar {
-  height: 2.25rem;
-  width: 2.25rem;
-  border-radius: 50%;
-  @include tablet {
-    height: 2.5rem;
-    width: 2.5rem;
   }
 }
