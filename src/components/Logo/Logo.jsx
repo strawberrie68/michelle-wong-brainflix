@@ -1,4 +1,4 @@
-import logo from "../../assets/Logo/src/assets/Logo/BrainFlix-logo.svg";
+import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import "./Logo.scss";
 
 const Logo = () => {
