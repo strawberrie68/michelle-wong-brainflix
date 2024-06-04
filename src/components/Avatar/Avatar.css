@@ -1,0 +1,11 @@
+.avatar {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+}
+@media screen and (min-width: 47.9375rem) {
+  .avatar {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}/*# sourceMappingURL=Avatar.css.map */
