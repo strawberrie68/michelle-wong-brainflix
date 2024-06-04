@@ -1,10 +1,13 @@
 import "./App.css";
+import Navbar from "../src/components/Navbar/Navbar.jsx";
 
 function App() {
   return (
-    <>
-      <p>hello</p>
-    </>
+    <div className="section-wrapper">
+      <header>
+        <Navbar />
+      </header>
+    </div>
   );
 }
 
