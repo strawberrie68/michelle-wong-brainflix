@@ -2,6 +2,7 @@ import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
+import "./Navbar.scss";
 
 const Navbar = () => {
   return (
