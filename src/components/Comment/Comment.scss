@@ -11,6 +11,9 @@
   }
   @include desktop {
     @include desktop-border-padding-right;
+    &:last-child {
+      border-bottom: none;
+    }
   }
   &__info {
     display: flex;

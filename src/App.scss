@@ -42,8 +42,9 @@
     justify-content: space-between;
     padding: 1rem 0;
     color: $primary-gray;
-    @include desktop {
+    @include tablet {
       border-top: none;
+      padding-top: 0;
     }
     &--right {
       @include desktop-border-padding-right;
@@ -100,6 +101,11 @@
     @include tablet {
       margin: 1.5rem 0;
     }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
