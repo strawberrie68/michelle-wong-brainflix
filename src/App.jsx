@@ -6,6 +6,7 @@ import likeIcon from "./assets/icons/likes.svg";
 import Comment from "./components/Comment/Comment";
 import Avatar from "./components/Avatar/Avatar.jsx";
 import Button from "./components/Button/Button.jsx";
+import VideoCard from "./components/VideoCard/VideoCard.jsx";
 
 function App() {
   return (
@@ -93,7 +94,8 @@ function App() {
             </section>
           </div>
           <aside className="recommend section-wrapper">
-            <p>This will be where the videos be</p>
+            <p className="recommend__title label-text">NEXT VIDEOS</p>
+            <VideoCard />
           </aside>
         </section>
       </main>

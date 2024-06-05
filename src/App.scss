@@ -94,6 +94,13 @@
   @include desktop {
     flex-basis: 40%;
   }
+  &__title {
+    color: $primary-gray;
+    margin: 1rem 0;
+    @include tablet {
+      margin: 1.5rem 0;
+    }
+  }
 }
 
 .comment {

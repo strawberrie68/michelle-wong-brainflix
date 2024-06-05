@@ -269,6 +269,15 @@ body {
     flex-basis: 40%;
   }
 }
+.recommend__title {
+  color: #afafaf;
+  margin: 1rem 0;
+}
+@media screen and (min-width: 47.9375rem) {
+  .recommend__title {
+    margin: 1.5rem 0;
+  }
+}
 
 .comment__title {
   margin: 1.5rem 0;
