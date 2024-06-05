@@ -1,0 +1,29 @@
+.comment {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment {
+    padding: 2.25rem 0;
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 80rem) and (min-width: 80rem) {
+  .comment {
+    padding-right: 1.5rem;
+  }
+}
+.comment__info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.comment__author {
+  font-weight: 600;
+  color: #323232;
+}
+.comment__date {
+  color: #afafaf;
+}/*# sourceMappingURL=Comment.css.map */

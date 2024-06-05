@@ -11,11 +11,11 @@ const Navbar = () => {
       <div className="nav__items">
         <div className="nav__top">
           <SearchBar />
-          <Avatar position="top" style="nav" />
+          <Avatar position="top" isDefault={false} />
         </div>
         <div className="nav__bottom">
-          <Button />
-          <Avatar position="bottom" style="nav" />
+          <Button buttonText="UPLOAD" icon="upload" />
+          <Avatar position="bottom" isDefault={false} />
         </div>
       </div>
     </nav>
