@@ -71,18 +71,22 @@ function App() {
                 <div className="comment__avatar">
                   <Avatar isDefault={false} />
                 </div>
-                <div className="comment__input-body">
-                  <label
-                    htmlFor="comment"
-                    className="comment__label label-text"
-                  >
-                    JOIN THE CONVERSATION
-                  </label>
-                  <textarea
-                    className="comment__input"
-                    placeholder="Add a new comment"
-                  ></textarea>
-                  <Button buttonText="COMMENT" icon="comment" />
+                <div className="comment__input-container">
+                  <div className="comment__input-body">
+                    <label
+                      htmlFor="comment"
+                      className="comment__label label-text"
+                    >
+                      JOIN THE CONVERSATION
+                    </label>
+                    <input
+                      className="comment__input"
+                      placeholder="Add a new comment"
+                    ></input>
+                  </div>
+                  <div className="comment__button">
+                    <Button buttonText="COMMENT" icon="comment" />
+                  </div>
                 </div>
               </form>
               <Comment />

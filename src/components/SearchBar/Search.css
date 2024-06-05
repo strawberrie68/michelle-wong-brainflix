@@ -154,7 +154,7 @@ body {
 }
 @media screen and (min-width: 47.9375rem) {
   .input-border, .search {
-    min-height: 2.5rem;
+    height: 2.5rem;
   }
 }
 

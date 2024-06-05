@@ -154,7 +154,7 @@ body {
 }
 @media screen and (min-width: 47.9375rem) {
   .input-border, .comment__input {
-    min-height: 2.5rem;
+    height: 2.5rem;
   }
 }
 
@@ -296,17 +296,30 @@ body {
     flex-basis: 3rem;
   }
 }
-.comment__input-body {
+.comment__input-container {
   flex-basis: 100%;
   display: flex;
   flex-direction: column;
-}
-.comment__input-body > *:not(:first-child) {
+  gap: 1rem;
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 47.9375rem) {
+  .comment__input-container {
+    flex-direction: row;
+  }
+}
 @media screen and (min-width: 80rem) and (min-width: 80rem) {
-  .comment__input-body {
+  .comment__input-container {
     padding-right: 1.5rem;
+  }
+}
+.comment__input-body {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment__input-body {
+    flex-basis: 90%;
   }
 }
 .comment__label {
@@ -315,5 +328,31 @@ body {
 }
 .comment__input {
   padding-top: 1rem;
+  display: flex;
   height: 5rem;
+}
+.comment__input::-moz-placeholder {
+  transform: translateY(-30px);
+}
+.comment__input::placeholder {
+  transform: translateY(-30px);
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment__input {
+    height: 2.5rem;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+  }
+  .comment__input::-moz-placeholder {
+    transform: translateY(0);
+  }
+  .comment__input::placeholder {
+    transform: translateY(0);
+  }
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment__button {
+    margin-top: 1.4rem;
+  }
 }/*# sourceMappingURL=App.css.map */
