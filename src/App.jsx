@@ -10,6 +10,7 @@ import Button from "./components/Button/Button.jsx";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
 import { convertTimestamp } from "../src/utils/utils.js";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
+import CommentForm from "./components/CommentForm/CommentForm.jsx";
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
   const [unselectedVideos, setUnselectedVideos] = useState(videoData.slice(1));
@@ -75,28 +76,8 @@ function App() {
             </div>
             <section className="comment-section section-wrapper">
               <p className="comment__title">3 Comments</p>
-              <form className="comment__form">
-                <div className="comment__avatar">
-                  <Avatar isDefault={false} />
-                </div>
-                <div className="comment__input-container">
-                  <div className="comment__input-body">
-                    <label
-                      htmlFor="comment"
-                      className="comment__label label-text"
-                    >
-                      JOIN THE CONVERSATION
-                    </label>
-                    <input
-                      className="comment__input"
-                      placeholder="Add a new comment"
-                    ></input>
-                  </div>
-                  <div className="comment__button">
-                    <Button buttonText="COMMENT" icon="comment" />
-                  </div>
-                </div>
-              </form>
+              <CommentForm />
+
               {selectedVideo.comments.map((comment) => {
                 return <Comment key={comment.id} comment={comment} />;
               })}
