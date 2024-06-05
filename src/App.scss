@@ -3,13 +3,37 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/typography" as *;
 
-.video {
-  &__player {
-    width: 100%;
-    border-radius: 0;
+.video-content {
+  @include desktop {
+    @include section-max-width;
+    display: flex;
+    gap: 1.5rem;
   }
-  &__description {
+}
+.video {
+  &__player-container {
+    background-color: $secondary-dark;
+    @include desktop {
+      margin: 0 auto;
+      display: flex;
+    }
+  }
+  &__player {
+    max-width: 100%;
+    border-radius: 0;
+    aspect-ratio: 16/9;
+    @include tablet {
+      margin-inline: 2.5rem;
+      max-width: 90%;
+    }
+    @include desktop {
+      @include section-max-width;
+      max-width: 60vw;
+    }
+  }
+  &__copy {
     padding: 1rem 0;
+    @include desktop-border-padding-right;
   }
   &__metadata {
     @include border-position($position: bottom);
@@ -18,7 +42,11 @@
     justify-content: space-between;
     padding: 1rem 0;
     color: $primary-gray;
+    @include desktop {
+      border-top: none;
+    }
     &--right {
+      @include desktop-border-padding-right;
       width: 40%;
       display: flex;
       flex-direction: column;
@@ -36,6 +64,7 @@
       @include tablet {
         flex-direction: row;
         width: auto;
+        gap: 2.25rem;
       }
     }
   }
@@ -51,5 +80,18 @@
   &__likes {
     display: flex;
     gap: 1rem;
+  }
+
+  &__body {
+    @include desktop {
+      flex-basis: 79%;
+      border-right: 1px solid $secondary-gray;
+    }
+  }
+}
+
+.recommend {
+  @include desktop {
+    flex-basis: 40%;
   }
 }

@@ -106,11 +106,16 @@ body {
 }
 .section-wrapper {
   margin: 1rem;
+  @include tablet {
+    margin: 1rem 2.5rem;
+  }
+  @include desktop {
+    margin: 1rem 0;
+  }
 }
 
 .input-border {
   min-height: 2.25rem;
-  // min-width: 15rem;
   max-width: 100%;
   border-radius: 4px;
   padding: 0 1rem;

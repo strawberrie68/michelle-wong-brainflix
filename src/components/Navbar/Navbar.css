@@ -11,6 +11,12 @@
     margin-inline: 1.5rem;
   }
 }
+@media screen and (min-width: 80rem) {
+  .nav {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
 .nav__items {
   display: flex;
   flex-direction: column;
