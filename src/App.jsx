@@ -36,13 +36,6 @@ function App() {
         <Navbar />
       </header>
       <main className="main-content">
-        {/* <div className="video__player-container">
-          <video
-            controls
-            className="video__player"
-            poster={selectedVideo.image}
-          ></video>
-        </div> */}
         <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
           <div className="video__body">
