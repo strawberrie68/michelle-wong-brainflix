@@ -9,6 +9,7 @@ import Avatar from "./components/Avatar/Avatar.jsx";
 import Button from "./components/Button/Button.jsx";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
 import { convertTimestamp } from "../src/utils/utils.js";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
   const [unselectedVideos, setUnselectedVideos] = useState(videoData.slice(1));
@@ -35,13 +36,14 @@ function App() {
         <Navbar />
       </header>
       <main className="main-content">
-        <div className="video__player-container">
+        {/* <div className="video__player-container">
           <video
             controls
             className="video__player"
             poster={selectedVideo.image}
           ></video>
-        </div>
+        </div> */}
+        <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
           <div className="video__body">
             <div className="video__details section-wrapper">

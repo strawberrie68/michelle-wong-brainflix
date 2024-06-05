@@ -167,33 +167,6 @@ body {
   }
 }
 
-.video__player-container {
-  background-color: #000000;
-}
-@media screen and (min-width: 80rem) {
-  .video__player-container {
-    margin: 0 auto;
-    display: flex;
-  }
-}
-.video__player {
-  max-width: 100%;
-  border-radius: 0;
-  aspect-ratio: 16/9;
-}
-@media screen and (min-width: 47.9375rem) {
-  .video__player {
-    margin-inline: 2.5rem;
-    max-width: 90%;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .video__player {
-    max-width: 63.75rem;
-    margin: 0 auto;
-    max-width: 60vw;
-  }
-}
 .video__copy {
   padding: 1rem 0;
 }

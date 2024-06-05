@@ -11,26 +11,26 @@
   }
 }
 .video {
-  &__player-container {
-    background-color: $secondary-dark;
-    @include desktop {
-      margin: 0 auto;
-      display: flex;
-    }
-  }
-  &__player {
-    max-width: 100%;
-    border-radius: 0;
-    aspect-ratio: 16/9;
-    @include tablet {
-      margin-inline: 2.5rem;
-      max-width: 90%;
-    }
-    @include desktop {
-      @include section-max-width;
-      max-width: 60vw;
-    }
-  }
+  //   &__player-container {
+  //     background-color: $secondary-dark;
+  //     @include desktop {
+  //       margin: 0 auto;
+  //       display: flex;
+  //     }
+  //   }
+  //   &__player {
+  //     max-width: 100%;
+  //     border-radius: 0;
+  //     aspect-ratio: 16/9;
+  //     @include tablet {
+  //       margin-inline: 2.5rem;
+  //       max-width: 90%;
+  //     }
+  //     @include desktop {
+  //       @include section-max-width;
+  //       max-width: 60vw;
+  //     }
+  //   }
   &__copy {
     padding: 1rem 0;
     @include desktop-border-padding-right;
