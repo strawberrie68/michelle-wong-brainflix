@@ -1,3 +1,6 @@
+import { useState } from "react";
+import videoData from "./data/video-details.json";
+
 import "./App.css";
 import Navbar from "../src/components/Navbar/Navbar.jsx";
 import videoThumbnail from "../src/assets/images/Upload-video-preview.jpg";
@@ -9,6 +12,14 @@ import Button from "./components/Button/Button.jsx";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
 
 function App() {
+  const [firstVideo, ...restVideos] = videoData;
+  const [video, setVideo] = useState(firstVideo);
+  // console.log(video);
+
+  function convertTimestamp(timestamp) {
+    const date = new Date(timestamp);
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  }
   return (
     <>
       <header className="section-wrapper">
@@ -25,16 +36,16 @@ function App() {
         <section className="video-content">
           <div className="video__body">
             <div className="video__details section-wrapper">
-              <h1 className="video__title">
-                The Future of Artificial Intelligence
-              </h1>
+              <h1 className="video__title">{video.title}</h1>
               <div className="video__metadata">
                 <div className="video__metadata--left">
                   <div className="video__author">
-                    <p className="video__info">By Aiden Thompson</p>
+                    <p className="video__info">By {video.channel}</p>
                   </div>
                   <div className="video__date">
-                    <p className="video__info">12/18/2018</p>
+                    <p className="video__info">
+                      {convertTimestamp(video.timestamp)}
+                    </p>
                   </div>
                 </div>
                 <div className="video__metadata--right">
@@ -44,7 +55,7 @@ function App() {
                       src={viewIcon}
                       alt="View icon"
                     />
-                    <p className="video__info">980,544</p>
+                    <p className="video__info">{video.views}</p>
                   </div>
                   <div className="video__likes">
                     <img
@@ -52,19 +63,11 @@ function App() {
                       src={likeIcon}
                       alt="like icon"
                     />
-                    <p className="video__info">22,479</p>
+                    <p className="video__info">{video.likes}</p>
                   </div>
                 </div>
               </div>
-              <p className="video__copy">
-                Explore the cutting-edge developments and predictions for
-                Artificial Intelligence in the coming years. From revolutionary
-                breakthroughs in machine learning to the ethical considerations
-                influencing AI advancements, this exploration transcends the
-                boundaries of mere speculation. Join us on a journey that
-                navigates the intricate interplay between innovation,ethics and
-                the ever-evolving tech frontier
-              </p>
+              <p className="video__copy">{video.description}</p>
             </div>
             <section className="comment-section section-wrapper">
               <p className="comment__title">3 Comments</p>
@@ -90,12 +93,16 @@ function App() {
                   </div>
                 </div>
               </form>
-              <Comment />
+              {video.comments.map((comment) => {
+                return <Comment key={comment.id} comment={comment} />;
+              })}
             </section>
           </div>
           <aside className="recommend section-wrapper">
             <p className="recommend__title label-text">NEXT VIDEOS</p>
-            <VideoCard />
+            {restVideos.map((video) => {
+              return <VideoCard key={video.id} video={video} />;
+            })}
           </aside>
         </section>
       </main>
