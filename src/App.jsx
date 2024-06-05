@@ -3,6 +3,7 @@ import Navbar from "../src/components/Navbar/Navbar.jsx";
 import videoThumbnail from "../src/assets/images/Upload-video-preview.jpg";
 import viewIcon from "./assets/icons/views.svg";
 import likeIcon from "./assets/icons/likes.svg";
+import Comment from "./components/Comment/Comment";
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
             </div>
             <section className="comment-section section-wrapper">
               <p>This is comment section</p>
+              <Comment />
             </section>
           </div>
           <aside className="recommend section-wrapper">
