@@ -145,7 +145,7 @@ body {
   }
 }
 
-.input-border {
+.input-border, .comment__input {
   min-height: 2.25rem;
   max-width: 100%;
   border-radius: 4px;
@@ -153,7 +153,7 @@ body {
   border: 1px solid #e1e1e1;
 }
 @media screen and (min-width: 47.9375rem) {
-  .input-border {
+  .input-border, .comment__input {
     min-height: 2.5rem;
   }
 }
@@ -268,4 +268,52 @@ body {
   .recommend {
     flex-basis: 40%;
   }
+}
+
+.comment__title {
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+.comment__form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #e1e1e1;
+}
+.comment__form > .comment__avatar {
+  margin-top: 1.4rem;
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment__form {
+    gap: 1.5rem;
+  }
+}
+.comment__avatar {
+  flex-basis: 2.25rem;
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment__avatar {
+    flex-basis: 3rem;
+  }
+}
+.comment__input-body {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.comment__input-body > *:not(:first-child) {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 80rem) and (min-width: 80rem) {
+  .comment__input-body {
+    padding-right: 1.5rem;
+  }
+}
+.comment__label {
+  margin-bottom: 0.25rem;
+  color: #afafaf;
+}
+.comment__input {
+  padding-top: 1rem;
+  height: 5rem;
 }/*# sourceMappingURL=App.css.map */

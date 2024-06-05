@@ -14,7 +14,7 @@ const Navbar = () => {
           <Avatar position="top" isDefault={false} />
         </div>
         <div className="nav__bottom">
-          <Button />
+          <Button buttonText="UPLOAD" icon="upload" />
           <Avatar position="bottom" isDefault={false} />
         </div>
       </div>

@@ -4,6 +4,8 @@ import videoThumbnail from "../src/assets/images/Upload-video-preview.jpg";
 import viewIcon from "./assets/icons/views.svg";
 import likeIcon from "./assets/icons/likes.svg";
 import Comment from "./components/Comment/Comment";
+import Avatar from "./components/Avatar/Avatar.jsx";
+import Button from "./components/Button/Button.jsx";
 
 function App() {
   return (
@@ -64,7 +66,25 @@ function App() {
               </p>
             </div>
             <section className="comment-section section-wrapper">
-              <p>This is comment section</p>
+              <p className="comment__title">3 Comments</p>
+              <form className="comment__form">
+                <div className="comment__avatar">
+                  <Avatar isDefault={false} />
+                </div>
+                <div className="comment__input-body">
+                  <label
+                    htmlFor="comment"
+                    className="comment__label label-text"
+                  >
+                    JOIN THE CONVERSATION
+                  </label>
+                  <textarea
+                    className="comment__input"
+                    placeholder="Add a new comment"
+                  ></textarea>
+                  <Button buttonText="COMMENT" icon="comment" />
+                </div>
+              </form>
               <Comment />
             </section>
           </div>

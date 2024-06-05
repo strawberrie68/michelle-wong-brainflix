@@ -95,3 +95,50 @@
     flex-basis: 40%;
   }
 }
+
+.comment {
+  &__title {
+    margin: 1.5rem 0;
+    font-weight: 600;
+  }
+  &__form {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    @include border-position($position: bottom);
+
+    & > .comment__avatar {
+      margin-top: 1.4rem;
+    }
+    @include tablet {
+      gap: 1.5rem;
+    }
+  }
+  &__avatar {
+    flex-basis: 2.25rem;
+
+    @include tablet {
+      flex-basis: 3rem;
+    }
+  }
+  &__input-body {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    & > *:not(:first-child) {
+      margin-bottom: 1rem;
+    }
+    @include desktop {
+      @include desktop-border-padding-right;
+    }
+  }
+  &__label {
+    margin-bottom: 0.25rem;
+    color: $primary-gray;
+  }
+  &__input {
+    @extend .input-border;
+    padding-top: 1rem;
+    height: 5rem;
+  }
+}
