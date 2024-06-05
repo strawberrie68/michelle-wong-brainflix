@@ -1,6 +1,11 @@
 import Avatar from "../Avatar/Avatar";
 import "./Comment.scss";
-const Comment = () => {
+const Comment = ({ comment }) => {
+  function convertTimestamp(timestamp) {
+    const date = new Date(timestamp);
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  }
+
   return (
     <article className="comment">
       <div className="comment__avatar">
@@ -8,14 +13,10 @@ const Comment = () => {
       </div>
       <div className="comment__details">
         <div className="comment__info">
-          <p className="comment__author">Victor Pinto</p>
-          <p className="comment__date">12/18/2018</p>
+          <p className="comment__author">{comment.name}</p>
+          <p className="comment__date">{convertTimestamp(comment.timestamp)}</p>
         </div>
-        <div className="comment__copy">
-          This is art. This is inexplicable magic expressed in the purest way,
-          everything that makes up this majestic work deserves reverence. Let us
-          appreciate this for what it is and what it contains.
-        </div>
+        <div className="comment__copy">{comment.comment}</div>
       </div>
     </article>
   );
