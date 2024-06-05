@@ -8,4 +8,23 @@
     height: 2.5rem;
     width: 2.5rem;
   }
+}
+.avatar--top {
+  flex-basis: 2.25rem;
+}
+@media screen and (min-width: 47.9375rem) {
+  .avatar--top {
+    display: none;
+  }
+}
+.avatar--bottom {
+  display: none;
+}
+@media screen and (min-width: 47.9375rem) {
+  .avatar--bottom {
+    display: block;
+  }
+}
+.avatar--default {
+  background-color: #e1e1e1;
 }/*# sourceMappingURL=Avatar.css.map */

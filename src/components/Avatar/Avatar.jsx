@@ -1,10 +1,11 @@
 import "./Avatar.css";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
-const Avatar = ({ position }) => {
+const Avatar = ({ position, isDefault }) => {
+  const avatarType = isDefault ? "avatar--default" : `avatar--${position}`;
   return (
-    <div className={`avatar nav__avatar-${position}`}>
-      <img className="avatar " src={avatar} alt="avatar" />
+    <div className={`avatar ${avatarType}`}>
+      {!isDefault && <img className="avatar " src={avatar} alt="avatar" />}
     </div>
   );
 };
