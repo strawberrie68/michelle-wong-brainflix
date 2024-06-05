@@ -10,23 +10,23 @@ import Button from "./components/Button/Button.jsx";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
 import { convertTimestamp } from "../src/utils/utils.js";
 function App() {
-  const [video, setVideo] = useState(videoData[0]);
-  const [remainingVideos, setRemainingVideos] = useState(videoData.slice(1));
+  const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
+  const [unselectedVideos, setUnselectedVideos] = useState(videoData.slice(1));
 
   function getSelectedVideo(id) {
     let selectedVideo = null;
-    const remainingVideos = [];
+    const otherVideos = [];
 
     for (const video of videoData) {
       if (video.id === id) {
         selectedVideo = video;
       } else {
-        remainingVideos.push(video);
+        otherVideos.push(video);
       }
     }
 
-    setVideo(selectedVideo);
-    setRemainingVideos(remainingVideos);
+    setSelectedVideo(selectedVideo);
+    setUnselectedVideos(otherVideos);
   }
 
   return (
@@ -39,21 +39,21 @@ function App() {
           <video
             controls
             className="video__player"
-            poster={video.image}
+            poster={selectedVideo.image}
           ></video>
         </div>
         <section className="video-content">
           <div className="video__body">
             <div className="video__details section-wrapper">
-              <h1 className="video__title">{video.title}</h1>
+              <h1 className="video__title">{selectedVideo.title}</h1>
               <div className="video__metadata">
                 <div className="video__metadata--left">
                   <div className="video__author">
-                    <p className="video__info">By {video.channel}</p>
+                    <p className="video__info">By {selectedVideo.channel}</p>
                   </div>
                   <div className="video__date">
                     <p className="video__info">
-                      {convertTimestamp(video.timestamp)}
+                      {convertTimestamp(selectedVideo.timestamp)}
                     </p>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ function App() {
                       src={viewIcon}
                       alt="View icon"
                     />
-                    <p className="video__info">{video.views}</p>
+                    <p className="video__info">{selectedVideo.views}</p>
                   </div>
                   <div className="video__likes">
                     <img
@@ -72,11 +72,11 @@ function App() {
                       src={likeIcon}
                       alt="like icon"
                     />
-                    <p className="video__info">{video.likes}</p>
+                    <p className="video__info">{selectedVideo.likes}</p>
                   </div>
                 </div>
               </div>
-              <p className="video__copy">{video.description}</p>
+              <p className="video__copy">{selectedVideo.description}</p>
             </div>
             <section className="comment-section section-wrapper">
               <p className="comment__title">3 Comments</p>
@@ -102,7 +102,7 @@ function App() {
                   </div>
                 </div>
               </form>
-              {video.comments.map((comment) => {
+              {selectedVideo.comments.map((comment) => {
                 return <Comment key={comment.id} comment={comment} />;
               })}
             </section>
@@ -110,7 +110,7 @@ function App() {
           <aside className="recommend section-wrapper">
             <p className="recommend__title label-text">NEXT VIDEOS</p>
             <div className="recommend__list">
-              {remainingVideos.map((video) => {
+              {unselectedVideos.map((video) => {
                 return (
                   <VideoCard
                     key={video.id}
