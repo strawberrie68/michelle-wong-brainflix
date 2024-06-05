@@ -1,0 +1,27 @@
+.video-player__container {
+  background-color: #000000;
+}
+@media screen and (min-width: 80rem) {
+  .video-player__container {
+    margin: 0 auto;
+    display: flex;
+  }
+}
+.video-player__video {
+  max-width: 100%;
+  border-radius: 0;
+  aspect-ratio: 16/9;
+}
+@media screen and (min-width: 47.9375rem) {
+  .video-player__video {
+    margin-inline: 2.5rem;
+    max-width: 90%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .video-player__video {
+    max-width: 63.75rem;
+    margin: 0 auto;
+    max-width: 60vw;
+  }
+}/*# sourceMappingURL=VideoPlayer.css.map */

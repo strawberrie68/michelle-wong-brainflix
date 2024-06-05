@@ -1,0 +1,25 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-player {
+  &__container {
+    background-color: $secondary-dark;
+    @include desktop {
+      margin: 0 auto;
+      display: flex;
+    }
+  }
+  &__video {
+    max-width: 100%;
+    border-radius: 0;
+    aspect-ratio: 16/9;
+    @include tablet {
+      margin-inline: 2.5rem;
+      max-width: 90%;
+    }
+    @include desktop {
+      @include section-max-width;
+      max-width: 60vw;
+    }
+  }
+}
