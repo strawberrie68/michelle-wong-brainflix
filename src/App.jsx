@@ -1,25 +1,34 @@
 import { useState } from "react";
 import videoData from "./data/video-details.json";
-
 import "./App.css";
 import Navbar from "../src/components/Navbar/Navbar.jsx";
-import videoThumbnail from "../src/assets/images/Upload-video-preview.jpg";
 import viewIcon from "./assets/icons/views.svg";
 import likeIcon from "./assets/icons/likes.svg";
 import Comment from "./components/Comment/Comment";
 import Avatar from "./components/Avatar/Avatar.jsx";
 import Button from "./components/Button/Button.jsx";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
-
+import { convertTimestamp } from "../src/utils/utils.js";
 function App() {
-  const [firstVideo, ...restVideos] = videoData;
-  const [video, setVideo] = useState(firstVideo);
-  // console.log(video);
+  const [video, setVideo] = useState(videoData[0]);
+  const [remainingVideos, setRemainingVideos] = useState(videoData.slice(1));
 
-  function convertTimestamp(timestamp) {
-    const date = new Date(timestamp);
-    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  function getSelectedVideo(id) {
+    let selectedVideo = null;
+    const remainingVideos = [];
+
+    for (const video of videoData) {
+      if (video.id === id) {
+        selectedVideo = video;
+      } else {
+        remainingVideos.push(video);
+      }
+    }
+
+    setVideo(selectedVideo);
+    setRemainingVideos(remainingVideos);
   }
+
   return (
     <>
       <header className="section-wrapper">
@@ -30,7 +39,7 @@ function App() {
           <video
             controls
             className="video__player"
-            poster={videoThumbnail}
+            poster={video.image}
           ></video>
         </div>
         <section className="video-content">
@@ -100,9 +109,18 @@ function App() {
           </div>
           <aside className="recommend section-wrapper">
             <p className="recommend__title label-text">NEXT VIDEOS</p>
-            {restVideos.map((video) => {
-              return <VideoCard key={video.id} video={video} />;
-            })}
+            <div className="recommend__list">
+              {remainingVideos.map((video) => {
+                return (
+                  <VideoCard
+                    key={video.id}
+                    video={video}
+                    id={video.id}
+                    handleClick={() => getSelectedVideo(video.id)}
+                  />
+                );
+              })}
+            </div>
           </aside>
         </section>
       </main>

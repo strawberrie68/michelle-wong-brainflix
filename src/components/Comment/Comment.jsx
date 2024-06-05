@@ -1,11 +1,8 @@
 import Avatar from "../Avatar/Avatar";
+import { convertTimestamp } from "../../utils/utils";
 import "./Comment.scss";
-const Comment = ({ comment }) => {
-  function convertTimestamp(timestamp) {
-    const date = new Date(timestamp);
-    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-  }
 
+const Comment = ({ comment }) => {
   return (
     <article className="comment">
       <div className="comment__avatar">
