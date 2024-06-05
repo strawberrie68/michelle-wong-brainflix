@@ -12,6 +12,9 @@
     align-items: center;
     margin-inline: 1.5rem;
   }
+  @include desktop {
+    @include section-max-width;
+  }
 
   &__items {
     display: flex;

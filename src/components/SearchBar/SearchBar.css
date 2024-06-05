@@ -134,6 +134,16 @@ body {
 .section-wrapper {
   margin: 1rem;
 }
+@media screen and (min-width: 47.9375rem) {
+  .section-wrapper {
+    margin: 1rem 2.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .section-wrapper {
+    margin: 1rem 0;
+  }
+}
 
 .input-border, .search {
   min-height: 2.25rem;

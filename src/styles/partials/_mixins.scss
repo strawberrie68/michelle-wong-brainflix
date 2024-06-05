@@ -50,3 +50,14 @@
 @mixin border-position($position) {
   border-#{$position}: 1px solid $secondary-gray;
 }
+
+@mixin section-max-width {
+  max-width: 63.75rem;
+  margin: 0 auto;
+}
+
+@mixin desktop-border-padding-right {
+  @include desktop {
+    padding-right: 1.5rem;
+  }
+}
