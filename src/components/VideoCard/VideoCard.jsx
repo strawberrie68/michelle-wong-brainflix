@@ -1,15 +1,16 @@
 import "./VideoCard.scss";
-const VideoCard = ({ video }) => {
+const VideoCard = ({ video, handleClick }) => {
+  const { image, title, channel } = video;
   return (
-    <div className="video-card">
+    <article className="video-card" onClick={handleClick}>
       <div className="video-card__image-container">
-        <img className="video-card__image" src={video.image} />
+        <img className="video-card__image" src={image} />
       </div>
       <div className="video-card__body">
-        <h2 className="video-card__title">{video.title}</h2>
-        <p className="video-card__channel">{video.channel}</p>
+        <h2 className="video-card__title">{title}</h2>
+        <p className="video-card__channel">{channel}</p>
       </div>
-    </div>
+    </article>
   );
 };
 
