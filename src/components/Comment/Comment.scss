@@ -11,6 +11,8 @@
   }
   @include desktop {
     @include desktop-border-padding-right;
+    padding: 1.5rem 0;
+    gap: 2.25rem;
     &:last-child {
       border-bottom: none;
     }
