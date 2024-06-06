@@ -4,7 +4,7 @@
 .button {
   height: 2.5rem;
   width: 100%;
-  border-radius: 4px;
+  border-radius: $border-radius;
   background-color: $primary-color;
   color: $primary-light;
   border: none;
@@ -15,6 +15,7 @@
   &:hover {
     background-color: $secondary-color;
   }
+
   @include tablet {
     min-width: 9.375rem;
     max-width: 12.5rem;
@@ -25,6 +26,7 @@
     padding-left: 0.75rem;
     height: 1.25rem;
   }
+
   &__body {
     flex-basis: calc(100% - 4.5rem);
     font-weight: 500;

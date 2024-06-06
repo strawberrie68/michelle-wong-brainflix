@@ -5,22 +5,28 @@
   height: 2.25rem;
   width: 2.25rem;
   border-radius: 50%;
+
   @include tablet {
     height: 2.5rem;
     width: 2.5rem;
   }
+
   &--top {
     flex-basis: 2.25rem;
+
     @include tablet {
       display: none;
     }
   }
+
   &--bottom {
     display: none;
+
     @include tablet {
       display: block;
     }
   }
+
   &--default {
     background-color: $secondary-gray;
   }
