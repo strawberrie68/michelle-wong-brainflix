@@ -1,16 +1,16 @@
 import { useState } from "react";
 import videoData from "./data/video-details.json";
 import "./App.css";
+// import { convertTimestamp } from "../src/utils/utils.js";
 import Navbar from "../src/components/Navbar/Navbar.jsx";
-import viewIcon from "./assets/icons/views.svg";
-import likeIcon from "./assets/icons/likes.svg";
+
+// import viewIcon from "./assets/icons/views.svg";
+// import likeIcon from "./assets/icons/likes.svg";
 import Comment from "./components/Comment/Comment";
-import Avatar from "./components/Avatar/Avatar.jsx";
-import Button from "./components/Button/Button.jsx";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
-import { convertTimestamp } from "../src/utils/utils.js";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
 import CommentForm from "./components/CommentForm/CommentForm.jsx";
+import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
   const [unselectedVideos, setUnselectedVideos] = useState(videoData.slice(1));
@@ -39,45 +39,14 @@ function App() {
       <main className="main-content">
         <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
-          <div className="video__body">
-            <div className="video__details section-wrapper">
-              <h1 className="video__title">{selectedVideo.title}</h1>
-              <div className="video__metadata">
-                <div className="video__metadata--left">
-                  <div className="video__author">
-                    <p className="video__info">By {selectedVideo.channel}</p>
-                  </div>
-                  <div className="video__date">
-                    <p className="video__info">
-                      {convertTimestamp(selectedVideo.timestamp)}
-                    </p>
-                  </div>
-                </div>
-                <div className="video__metadata--right">
-                  <div className="video__views">
-                    <img
-                      className="video__icon"
-                      src={viewIcon}
-                      alt="View icon"
-                    />
-                    <p className="video__info">{selectedVideo.views}</p>
-                  </div>
-                  <div className="video__likes">
-                    <img
-                      className="video__icon"
-                      src={likeIcon}
-                      alt="like icon"
-                    />
-                    <p className="video__info">{selectedVideo.likes}</p>
-                  </div>
-                </div>
-              </div>
-              <p className="video__copy">{selectedVideo.description}</p>
-            </div>
-            <section className="comment-section section-wrapper">
-              <p className="comment__title">3 Comments</p>
-              <CommentForm />
+          <div className="video-content__body">
+            <VideoDetails video={selectedVideo} />
 
+            <section className="comment-section section-wrapper">
+              <p className="comment__title">
+                {selectedVideo.comments.length} Comments
+              </p>
+              <CommentForm />
               {selectedVideo.comments.map((comment) => {
                 return <Comment key={comment.id} comment={comment} />;
               })}
