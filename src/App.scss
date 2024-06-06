@@ -47,18 +47,3 @@
     }
   }
 }
-
-.comment {
-  &__title {
-    margin: 1.5rem 0;
-    font-weight: 600;
-
-    @include tablet {
-      margin: 2.25rem 0;
-    }
-
-    @include desktop {
-      margin: 1.5rem 0;
-    }
-  }
-}
