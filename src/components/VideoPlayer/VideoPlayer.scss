@@ -4,9 +4,10 @@
 .video-player {
   &__container {
     background-color: $secondary-dark;
+    display: flex;
+    justify-content: center;
     @include desktop {
       margin: 0 auto;
-      display: flex;
     }
   }
   &__video {

@@ -49,7 +49,7 @@ body {
 
 .label-text {
   @include font-properties(
-    $weight: 600,
+    $weight: 500,
     $spacing: 0.0313rem,
     $line-height: 1.25rem,
     $size: 0.725rem
@@ -97,7 +97,7 @@ body {
   }
   .label-text {
     @include font-properties(
-      $weight: 700,
+      $weight: 600,
       $spacing: null,
       $line-height: 1.25rem,
       $size: 0.75rem
