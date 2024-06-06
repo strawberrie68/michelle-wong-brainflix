@@ -1,16 +1,14 @@
 import { useState } from "react";
 import videoData from "./data/video-details.json";
 import "./App.css";
-// import { convertTimestamp } from "../src/utils/utils.js";
-import Navbar from "../src/components/Navbar/Navbar.jsx";
 
-// import viewIcon from "./assets/icons/views.svg";
-// import likeIcon from "./assets/icons/likes.svg";
+import Navbar from "../src/components/Navbar/Navbar.jsx";
 import Comment from "./components/Comment/Comment";
 import VideoCard from "./components/VideoCard/VideoCard.jsx";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
 import CommentForm from "./components/CommentForm/CommentForm.jsx";
 import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
+
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
   const [unselectedVideos, setUnselectedVideos] = useState(videoData.slice(1));
@@ -41,7 +39,6 @@ function App() {
         <section className="video-content">
           <div className="video-content__body">
             <VideoDetails video={selectedVideo} />
-
             <section className="comment-section section-wrapper">
               <p className="comment__title">
                 {selectedVideo.comments.length} Comments
