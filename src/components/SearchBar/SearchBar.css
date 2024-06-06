@@ -68,7 +68,7 @@ body {
 }
 
 .label-text {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25rem;
   letter-spacing: 0.0313rem;
   font-size: 0.725rem;
@@ -126,7 +126,7 @@ body {
     font-size: 0.875rem;
   }
   .label-text {
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.25rem;
     font-size: 0.75rem;
   }
@@ -162,7 +162,10 @@ body {
   flex-basis: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem;
+  color: #323232;
+  background-color: #fafafa;
+  box-sizing: border-box;
 }
 .search__icon {
   flex-basis: 1rem;
@@ -171,4 +174,12 @@ body {
 .search__input {
   border: none;
   flex-basis: 100%;
+  color: #323232;
+  background-color: #fafafa;
+}
+.search__input::-moz-placeholder {
+  color: #323232;
+}
+.search__input::placeholder {
+  color: #323232;
 }/*# sourceMappingURL=SearchBar.css.map */
