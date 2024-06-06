@@ -61,10 +61,15 @@
   }
 }
 .video-details__copy {
-  padding: 1rem 0;
+  margin: 1rem 0;
 }
 @media screen and (min-width: 80rem) {
   .video-details__copy {
     padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 47.9375rem) {
+  .video-details__copy {
+    margin: 2.25rem 0;
   }
 }/*# sourceMappingURL=VideoDetails.css.map */

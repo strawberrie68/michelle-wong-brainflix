@@ -57,7 +57,10 @@
     }
   }
   &__copy {
-    padding: 1rem 0;
+    margin: 1rem 0;
     @include desktop-border-padding-right;
+    @include tablet {
+      margin: 2.25rem 0;
+    }
   }
 }
