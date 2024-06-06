@@ -11,19 +11,22 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
   @include tablet {
     min-width: 9.375rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
     max-width: 12.5rem;
   }
 
   &__icon {
-    flex-basis: 1rem;
-    padding-left: 0.5rem;
+    flex-basis: 1.25rem;
+    padding-left: 0.75rem;
+    height: 1.25rem;
   }
   &__body {
-    flex-basis: 100%;
-    text-align: center;
+    flex-basis: calc(100% - 4.5rem);
+    font-weight: 500;
   }
 }

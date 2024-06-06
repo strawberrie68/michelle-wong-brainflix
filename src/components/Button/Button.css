@@ -9,19 +9,21 @@
   align-items: center;
   gap: 1rem;
 }
+.button:hover {
+  background-color: #0065ad;
+}
 @media screen and (min-width: 47.9375rem) {
   .button {
     min-width: 9.375rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
     max-width: 12.5rem;
   }
 }
 .button__icon {
-  flex-basis: 1rem;
-  padding-left: 0.5rem;
+  flex-basis: 1.25rem;
+  padding-left: 0.75rem;
+  height: 1.25rem;
 }
 .button__body {
-  flex-basis: 100%;
-  text-align: center;
+  flex-basis: calc(100% - 4.5rem);
+  font-weight: 500;
 }/*# sourceMappingURL=Button.css.map */
