@@ -8,11 +8,14 @@
   width: 100%;
   @include border-position($position: bottom);
 
-  & > .comment__avatar {
+  & > &__avatar {
     margin-top: 1.4rem;
   }
   @include tablet {
     gap: 1.5rem;
+  }
+  @include desktop {
+    gap: 2.25rem;
   }
 
   &__avatar {
@@ -33,6 +36,7 @@
     }
     @include desktop {
       @include desktop-border-padding-right;
+      gap: 1.5rem;
     }
   }
   &__field {
@@ -48,15 +52,21 @@
   }
   &__input {
     @extend .input-border;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
+    padding-left: 0.75rem;
     display: flex;
     height: 5rem;
+    background-color: $secondary-light;
+    box-sizing: border-box;
     &::placeholder {
       transform: translateY(-30px);
+      color: $primary-dark;
+      font-weight: 500;
     }
     @include tablet {
       height: 2.5rem;
       padding-top: 0;
+      padding-left: 1rem;
       display: flex;
       align-items: center;
       &::placeholder {

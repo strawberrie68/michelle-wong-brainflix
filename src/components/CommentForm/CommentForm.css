@@ -68,7 +68,7 @@ body {
 }
 
 .label-text {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25rem;
   letter-spacing: 0.0313rem;
   font-size: 0.725rem;
@@ -126,7 +126,7 @@ body {
     font-size: 0.875rem;
   }
   .label-text {
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.25rem;
     font-size: 0.75rem;
   }
@@ -164,12 +164,17 @@ body {
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
 }
-.comment-form > .comment__avatar {
+.comment-form > .comment-form__avatar {
   margin-top: 1.4rem;
 }
 @media screen and (min-width: 47.9375rem) {
   .comment-form {
     gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment-form {
+    gap: 2.25rem;
   }
 }
 .comment-form__avatar {
@@ -192,6 +197,11 @@ body {
     flex-direction: row;
   }
 }
+@media screen and (min-width: 80rem) {
+  .comment-form__content {
+    gap: 1.5rem;
+  }
+}
 @media screen and (min-width: 80rem) and (min-width: 80rem) {
   .comment-form__content {
     padding-right: 1.5rem;
@@ -211,20 +221,28 @@ body {
   color: #afafaf;
 }
 .comment-form__input {
-  padding-top: 1rem;
+  padding-top: 0.75rem;
+  padding-left: 0.75rem;
   display: flex;
   height: 5rem;
+  background-color: #fafafa;
+  box-sizing: border-box;
 }
 .comment-form__input::-moz-placeholder {
   transform: translateY(-30px);
+  color: #323232;
+  font-weight: 500;
 }
 .comment-form__input::placeholder {
   transform: translateY(-30px);
+  color: #323232;
+  font-weight: 500;
 }
 @media screen and (min-width: 47.9375rem) {
   .comment-form__input {
     height: 2.5rem;
     padding-top: 0;
+    padding-left: 1rem;
     display: flex;
     align-items: center;
   }
