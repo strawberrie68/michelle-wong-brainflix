@@ -14,16 +14,8 @@ function App() {
   const [unselectedVideos, setUnselectedVideos] = useState(videoData.slice(1));
 
   function getSelectedVideo(id) {
-    let selectedVideo = null;
-    const otherVideos = [];
-
-    for (const video of videoData) {
-      if (video.id === id) {
-        selectedVideo = video;
-      } else {
-        otherVideos.push(video);
-      }
-    }
+    const selectedVideo = videoData.find((video) => video.id === id);
+    const otherVideos = videoData.filter((video) => video.id !== id);
 
     setSelectedVideo(selectedVideo);
     setUnselectedVideos(otherVideos);
