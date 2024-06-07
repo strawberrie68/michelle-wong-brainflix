@@ -10,10 +10,10 @@
   @include tablet {
     padding: 2.25rem 0;
     gap: $gap-medium;
+    width: 100%;
   }
 
   @include desktop {
-    @include desktop-border-padding-right;
     padding: $gap-medium 0;
     gap: 2.25rem;
 
@@ -35,5 +35,13 @@
 
   &__date {
     color: $primary-gray;
+  }
+
+  &__details {
+    @include tablet {
+      flex-basis: 100%;
+    }
+
+    @include desktop-border-padding-right;
   }
 }
