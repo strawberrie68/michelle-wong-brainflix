@@ -3,15 +3,25 @@
 
 .nav {
   @include flex-column;
+  padding: $gap-small 0;
   gap: $gap-small;
   align-items: center;
+  margin-inline: $gap-small;
 
   @include tablet {
     @include flex-box($direction: row, $justify: space-between, $align: center);
+    margin: 0 $gap-large;
   }
 
   @include desktop {
     @include section-max-width;
+    margin: 0 auto;
+    padding-left: $gap-small;
+    padding-right: $gap-small;
+  }
+
+  &__header {
+    @include border-position($position: bottom);
   }
 
   &__items {

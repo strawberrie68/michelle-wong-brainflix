@@ -6,19 +6,21 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   return (
-    <nav className="nav">
-      <Logo />
-      <div className="nav__items">
-        <div className="nav__top">
-          <SearchBar />
-          <Avatar position="top" isDefault={false} />
+    <header className="nav__header">
+      <nav className="nav">
+        <Logo />
+        <div className="nav__items">
+          <div className="nav__top">
+            <SearchBar />
+            <Avatar position="top" isDefault={false} />
+          </div>
+          <div className="nav__bottom">
+            <Button buttonText="UPLOAD" icon="upload" />
+            <Avatar position="bottom" isDefault={false} />
+          </div>
         </div>
-        <div className="nav__bottom">
-          <Button buttonText="UPLOAD" icon="upload" />
-          <Avatar position="bottom" isDefault={false} />
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

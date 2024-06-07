@@ -22,9 +22,7 @@ function App() {
 
   return (
     <>
-      <header className="section-wrapper">
-        <Navbar />
-      </header>
+      <Navbar />
       <main className="main-content">
         <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
