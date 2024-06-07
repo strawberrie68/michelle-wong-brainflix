@@ -6,7 +6,11 @@ const Button = ({ icon, buttonText }) => {
   const buttonIcon = icon == "upload" ? upload : comment;
   return (
     <button className="button label-text">
-      <img className="button__icon" src={buttonIcon} />
+      <img
+        className="button__icon"
+        src={buttonIcon}
+        alt={`${buttonText} icon for button`}
+      />
       <p className="button__body">{buttonText}</p>
     </button>
   );

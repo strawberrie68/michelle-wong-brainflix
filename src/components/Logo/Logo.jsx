@@ -4,7 +4,7 @@ import "./Logo.scss";
 const Logo = () => {
   return (
     <div className="logo">
-      <img className="logo__image" src={logo} />
+      <img className="logo__image" src={logo} alt="brainflix logo" />
     </div>
   );
 };
