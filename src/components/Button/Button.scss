@@ -10,7 +10,7 @@
   border: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: $gap-small;
 
   &:hover {
     background-color: $secondary-color;

@@ -18,7 +18,7 @@
     aspect-ratio: 16/9;
 
     @include tablet {
-      margin-inline: 2.5rem;
+      margin-inline: $gap-large;
       max-width: 90%;
     }
 

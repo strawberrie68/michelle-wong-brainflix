@@ -38,12 +38,12 @@
 }
 
 @mixin headingPadding {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-top: $gap-medium;
+  margin-bottom: $gap-small;
 
   @include tablet {
     margin-top: 2.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: $gap-small;
   }
 }
 
@@ -58,6 +58,11 @@
 
 @mixin desktop-border-padding-right {
   @include desktop {
-    padding-right: 1.5rem;
+    padding-right: $gap-medium;
   }
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }

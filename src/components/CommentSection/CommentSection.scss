@@ -1,8 +1,9 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .comment-section {
   &__title {
-    margin: 1.5rem 0;
+    margin: $gap-medium 0;
     font-weight: 600;
 
     @include tablet {
@@ -10,7 +11,7 @@
     }
 
     @include desktop {
-      margin: 1.5rem 0;
+      margin: $gap-medium 0;
     }
   }
 }

@@ -14,7 +14,7 @@ h1 {
     $weight: 700,
     $spacing: null,
     $line-height: 2rem,
-    $size: 1.5rem
+    $size: $gap-medium
   );
 }
 
@@ -107,14 +107,14 @@ body {
 }
 
 .section-wrapper {
-  margin: 1rem;
+  margin: $gap-small;
 
   @include tablet {
-    margin: 1rem 2.5rem;
+    margin: $gap-small $gap-large;
   }
 
   @include desktop {
-    margin: 1rem 0;
+    margin: $gap-small 0;
   }
 }
 
@@ -122,10 +122,10 @@ body {
   min-height: 2.25rem;
   max-width: 100%;
   border-radius: $border-radius;
-  padding: 0 1rem;
+  padding: 0 $gap-small;
   border: 1px solid $secondary-gray;
 
   @include tablet {
-    height: 2.5rem;
+    height: $gap-large;
   }
 }

@@ -4,17 +4,16 @@
 
 .search {
   @extend .input-border;
+  @include flex-box($direction: row, $justify: space-between, $align: center);
   flex-basis: 100%;
-  display: flex;
-  justify-content: space-between;
   gap: 0.5rem;
   color: $primary-dark;
   background-color: $secondary-light;
   box-sizing: border-box;
 
   &__icon {
-    flex-basis: 1rem;
-    max-width: 1rem;
+    flex-basis: $gap-small;
+    max-width: $gap-small;
   }
 
   &__input {

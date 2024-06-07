@@ -7,7 +7,7 @@
     @include border-position($position: top);
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: $gap-small 0;
     color: $primary-gray;
 
     @include tablet {
@@ -17,10 +17,9 @@
 
     &--right {
       @include desktop-border-padding-right;
+      @include flex-column;
       width: 40%;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      gap: $gap-small;
 
       @include tablet {
         flex-direction: row;
@@ -30,9 +29,8 @@
 
     &--left {
       width: 60%;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      @include flex-column;
+      gap: $gap-small;
 
       @include tablet {
         flex-direction: row;
@@ -49,12 +47,12 @@
 
   &__views {
     display: flex;
-    gap: 1rem;
+    gap: $gap-small;
   }
 
   &__likes {
     display: flex;
-    gap: 1rem;
+    gap: $gap-small;
   }
 
   &__body {
@@ -65,7 +63,7 @@
   }
 
   &__copy {
-    margin: 1rem 0;
+    margin: $gap-small 0;
     @include desktop-border-padding-right;
 
     @include tablet {

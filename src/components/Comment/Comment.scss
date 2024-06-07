@@ -3,18 +3,18 @@
 
 .comment {
   display: flex;
-  gap: 1rem;
+  gap: $gap-small;
   padding: 1rem 0;
   @include border-position($position: bottom);
 
   @include tablet {
     padding: 2.25rem 0;
-    gap: 1.5rem;
+    gap: $gap-medium;
   }
 
   @include desktop {
     @include desktop-border-padding-right;
-    padding: 1.5rem 0;
+    padding: $gap-medium 0;
     gap: 2.25rem;
 
     &:last-child {
@@ -25,7 +25,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1rem;
+    padding-bottom: $gap-small;
   }
 
   &__author {
