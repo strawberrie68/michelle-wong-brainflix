@@ -2,7 +2,8 @@ import Avatar from "../Avatar/Avatar";
 import { convertTimestamp } from "../../utils/utils";
 import "./Comment.scss";
 
-const Comment = ({ comment }) => {
+const Comment = ({ commentData }) => {
+  const { name, timestamp, comment } = commentData;
   return (
     <article className="comment">
       <div className="comment__avatar">
@@ -10,10 +11,10 @@ const Comment = ({ comment }) => {
       </div>
       <div className="comment__details">
         <div className="comment__info">
-          <p className="comment__author">{comment.name}</p>
-          <p className="comment__date">{convertTimestamp(comment.timestamp)}</p>
+          <p className="comment__author">{name}</p>
+          <p className="comment__date">{convertTimestamp(timestamp)}</p>
         </div>
-        <div className="comment__copy">{comment.comment}</div>
+        <div className="comment__copy">{comment}</div>
       </div>
     </article>
   );

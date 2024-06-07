@@ -8,7 +8,7 @@ const CommentSection = ({ comments }) => {
       <p className="comment-section__title">{comments.length} Comments</p>
       <CommentForm />
       {comments.map((comment) => {
-        return <Comment key={comment.id} comment={comment} />;
+        return <Comment key={comment.id} commentData={comment} />;
       })}
     </section>
   );
