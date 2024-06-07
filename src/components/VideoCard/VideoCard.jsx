@@ -4,7 +4,11 @@ const VideoCard = ({ video, handleClick }) => {
   return (
     <article className="video-card" onClick={handleClick}>
       <div className="video-card__image-container">
-        <img className="video-card__image" src={image} />
+        <img
+          className="video-card__image"
+          src={image}
+          alt={`${title} Video Thumbnail`}
+        />
       </div>
       <div className="video-card__body">
         <h2 className="video-card__title">{title}</h2>
