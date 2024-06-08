@@ -122,10 +122,11 @@ body {
   min-height: 2.25rem;
   max-width: 100%;
   border-radius: $border-radius;
-  padding: 0 $gap-small;
+  padding: 0 0.75rem;
   border: 1px solid $secondary-gray;
 
   @include tablet {
     height: $gap-large;
+    padding: 0 $gap-small;
   }
 }
