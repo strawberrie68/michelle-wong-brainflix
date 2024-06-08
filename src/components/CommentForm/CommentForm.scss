@@ -59,16 +59,15 @@
 
   &__input {
     @extend .input-border;
+    @include input-styles;
     padding-top: 0.75rem;
     padding-left: 0.75rem;
     display: flex;
-    height: 5rem;
-    background-color: $secondary-light;
+    height: 6.2rem;
     box-sizing: border-box;
 
     &::placeholder {
       transform: translateY(-1.875rem);
-      color: $primary-dark;
       font-weight: 500;
     }
 
