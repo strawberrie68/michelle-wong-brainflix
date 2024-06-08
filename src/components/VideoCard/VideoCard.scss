@@ -4,13 +4,14 @@
 .video-card {
   display: flex;
   gap: $gap-small;
+  height: 3.75rem;
 
   @include tablet {
     gap: $gap-medium;
   }
 
   &__image-container {
-    flex-basis: 7.5rem;
+    flex-basis: 6.5rem;
     @include flex-box($direction: row, $justify: center, $align: center);
 
     @include tablet {
@@ -20,14 +21,14 @@
 
   &__body {
     @include flex-column;
-    flex-basis: 50%;
-    gap: $gap-small;
-    justify-content: space-around;
-    padding-bottom: 0.5rem;
+    flex-basis: 100%;
+    // gap: $gap-small;
+    justify-content: space-between;
+    // padding-bottom: $gap-x-small;
   }
 
   &__image {
-    max-width: 100%;
+    max-width: 6.75rem;
     border-radius: $border-radius;
     object-fit: cover;
     aspect-ratio: 16/9;

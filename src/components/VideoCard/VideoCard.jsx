@@ -11,7 +11,7 @@ const VideoCard = ({ video, handleClick }) => {
         />
       </div>
       <div className="video-card__body">
-        <h2 className="video-card__title">{title}</h2>
+        <h3 className="video-card__title">{title}</h3>
         <p className="video-card__channel">{channel}</p>
       </div>
     </article>
