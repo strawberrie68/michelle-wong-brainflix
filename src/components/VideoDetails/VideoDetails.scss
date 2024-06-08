@@ -18,7 +18,7 @@
     &--right {
       @include desktop-border-padding-right;
       @include flex-column;
-      width: 40%;
+      width: 51%;
       gap: $gap-small;
 
       @include tablet {
@@ -47,12 +47,12 @@
 
   &__views {
     display: flex;
-    gap: $gap-small;
+    gap: $gap-x-small;
   }
 
   &__likes {
     display: flex;
-    gap: $gap-small;
+    gap: $gap-x-small;
   }
 
   &__body {

@@ -6,9 +6,9 @@ import { convertTimestamp } from "../../utils/utils";
 const VideoDetails = ({ video }) => {
   const { title, channel, timestamp, views, likes, description } = video;
   return (
-    <div className="video-details section-wrapper">
+    <article className="video-details section-wrapper">
       <h1 className="video-details__title">{title}</h1>
-      <div className="video-details__metadata">
+      <section className="video-details__metadata">
         <div className="video-details__metadata--left">
           <div className="video-details__author">
             <p className="video-details__info">By {channel}</p>
@@ -35,9 +35,9 @@ const VideoDetails = ({ video }) => {
             <p className="video-details__info">{likes}</p>
           </div>
         </div>
-      </div>
+      </section>
       <p className="video-details__copy">{description}</p>
-    </div>
+    </article>
   );
 };
 
