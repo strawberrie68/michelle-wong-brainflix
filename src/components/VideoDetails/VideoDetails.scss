@@ -39,6 +39,9 @@
       }
     }
   }
+  &__info {
+    color: $primary-gray;
+  }
 
   &__author &__info {
     color: $primary-dark;
@@ -58,7 +61,7 @@
   &__body {
     @include desktop {
       flex-basis: 79%;
-      border-right: 1px solid $secondary-gray;
+      border-right: $default-border;
     }
   }
 

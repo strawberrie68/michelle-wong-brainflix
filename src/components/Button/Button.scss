@@ -2,17 +2,14 @@
 @use "../../styles/partials/mixins" as *;
 
 .button {
+  @include flex-box($direction: row, $justify: center, $align: center);
+  position: relative;
   height: 2.5rem;
   width: 100%;
+  gap: $gap-small;
+  border: none;
   border-radius: $border-radius;
   background-color: $primary-color;
-  color: $primary-light;
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: $gap-small;
-  justify-content: center;
-  position: relative;
 
   &:hover {
     background-color: $secondary-color;
@@ -24,14 +21,15 @@
   }
 
   &__icon {
+    position: absolute;
     flex-basis: 1.25rem;
     height: 1.25rem;
-    position: absolute;
     left: 0.625rem;
   }
 
   &__body {
     flex-basis: calc(100% - 4.5rem);
     font-weight: 500;
+    color: $primary-light;
   }
 }

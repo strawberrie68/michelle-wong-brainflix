@@ -42,6 +42,9 @@
     gap: 2.25rem;
   }
 }
+.video-details__info {
+  color: #afafaf;
+}
 .video-details__author .video-details__info {
   color: #323232;
   font-weight: 600;
