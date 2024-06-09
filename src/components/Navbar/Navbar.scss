@@ -38,6 +38,7 @@
 
     @include desktop {
       gap: $gap-medium;
+      padding-right: $gap-medium;
     }
   }
 

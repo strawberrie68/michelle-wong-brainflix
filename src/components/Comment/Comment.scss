@@ -16,6 +16,8 @@
   @include desktop {
     padding: $gap-medium 0;
     gap: 2.25rem;
+    padding-left: $gap-small;
+    box-sizing: border-box;
 
     &:last-child {
       border-bottom: none;

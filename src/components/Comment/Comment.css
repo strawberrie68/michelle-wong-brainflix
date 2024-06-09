@@ -8,20 +8,16 @@
   .comment {
     padding: 2.25rem 0;
     gap: 1.5rem;
+    width: 100%;
   }
 }
 @media screen and (min-width: 80rem) {
   .comment {
     padding: 1.5rem 0;
     gap: 2.25rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
   }
-}
-@media screen and (min-width: 80rem) and (min-width: 80rem) {
-  .comment {
-    padding-right: 1.5rem;
-  }
-}
-@media screen and (min-width: 80rem) {
   .comment:last-child {
     border-bottom: none;
   }
@@ -29,7 +25,7 @@
 .comment__info {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 .comment__author {
   font-weight: 600;
@@ -37,4 +33,14 @@
 }
 .comment__date {
   color: #afafaf;
+}
+@media screen and (min-width: 47.9375rem) {
+  .comment__details {
+    flex-basis: 100%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__details {
+    padding-right: 1.5rem;
+  }
 }/*# sourceMappingURL=Comment.css.map */

@@ -18,6 +18,8 @@
 
   @include desktop {
     gap: 2.25rem;
+    padding-left: $gap-small;
+    box-sizing: border-box;
   }
 
   &__avatar {

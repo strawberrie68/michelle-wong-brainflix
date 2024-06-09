@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-content: center;
+  position: relative;
 }
 .button:hover {
   background-color: #0065ad;
@@ -20,8 +22,9 @@
 }
 .button__icon {
   flex-basis: 1.25rem;
-  padding-left: 0.75rem;
   height: 1.25rem;
+  position: absolute;
+  left: 0.625rem;
 }
 .button__body {
   flex-basis: calc(100% - 4.5rem);

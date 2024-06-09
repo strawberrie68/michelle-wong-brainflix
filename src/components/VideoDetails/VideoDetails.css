@@ -3,7 +3,7 @@
   border-top: 1px solid #e1e1e1;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   color: #afafaf;
 }
 @media screen and (min-width: 47.9375rem) {
@@ -13,9 +13,9 @@
   }
 }
 .video-details__metadata--right {
-  width: 40%;
   display: flex;
   flex-direction: column;
+  width: 51%;
   gap: 1rem;
 }
 @media screen and (min-width: 80rem) {
@@ -48,11 +48,11 @@
 }
 .video-details__views {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .video-details__likes {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 @media screen and (min-width: 80rem) {
   .video-details__body {
@@ -70,6 +70,6 @@
 }
 @media screen and (min-width: 47.9375rem) {
   .video-details__copy {
-    margin: 2.25rem 0;
+    margin: 1.5rem 0;
   }
 }/*# sourceMappingURL=VideoDetails.css.map */

@@ -6,10 +6,6 @@
   gap: $gap-small;
   height: 3.75rem;
 
-  @include tablet {
-    gap: $gap-medium;
-  }
-
   &__image-container {
     flex-basis: 6.5rem;
     @include flex-box($direction: row, $justify: center, $align: center);
@@ -22,9 +18,7 @@
   &__body {
     @include flex-column;
     flex-basis: 100%;
-    // gap: $gap-small;
     justify-content: space-between;
-    // padding-bottom: $gap-x-small;
   }
 
   &__image {

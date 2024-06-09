@@ -21,8 +21,8 @@
 }
 @media screen and (min-width: 80rem) {
   .video-player__video {
-    max-width: 63.75rem;
+    max-width: 65.25rem;
     margin: 0 auto;
-    max-width: 60vw;
+    max-width: 67vw;
   }
 }/*# sourceMappingURL=VideoPlayer.css.map */

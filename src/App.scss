@@ -6,11 +6,11 @@
 .video-content {
   &__body {
     @include desktop {
-      flex-basis: 79%;
+      flex-basis: 92%;
       border-right: 1px solid $secondary-gray;
     }
   }
-
+  @include section-max-width;
   @include desktop {
     @include section-max-width;
     display: flex;
@@ -30,6 +30,9 @@
     @include tablet {
       margin: $gap-medium 0;
     }
+    @include desktop {
+      margin: $gap-small 0;
+    }
   }
 
   &__list {
@@ -43,6 +46,7 @@
 
     @include desktop {
       max-width: 100%;
+      gap: 1.9rem;
     }
   }
 }
