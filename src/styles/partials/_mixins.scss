@@ -62,13 +62,9 @@
   }
 }
 
-@mixin flex-column {
+@mixin flex-column-gap($gap: null) {
   display: flex;
   flex-direction: column;
-}
-
-@mixin flex-column-gap($gap: null) {
-  @include flex-column;
   gap: $gap;
 }
 

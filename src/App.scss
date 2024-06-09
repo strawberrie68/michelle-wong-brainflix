@@ -10,7 +10,9 @@
       border-right: $default-border;
     }
   }
+
   @include section-max-width;
+
   @include desktop {
     @include section-max-width;
     display: flex;
@@ -30,14 +32,14 @@
     @include tablet {
       margin: $gap-medium 0;
     }
+
     @include desktop {
       margin: $gap-small 0;
     }
   }
 
   &__list {
-    @include flex-column;
-    gap: $gap-small;
+    @include flex-column-gap($gap-small);
 
     @include tablet {
       gap: $gap-medium;

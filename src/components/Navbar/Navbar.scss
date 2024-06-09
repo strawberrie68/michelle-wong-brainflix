@@ -2,9 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .nav {
-  @include flex-column;
+  @include flex-column-gap($gap-small);
   padding: $gap-small 0;
-  gap: $gap-small;
   align-items: center;
   margin-inline: $gap-small;
 
@@ -25,8 +24,7 @@
   }
 
   &__items {
-    @include flex-column;
-    gap: $gap-small;
+    @include flex-column-gap($gap-small);
     width: 100%;
 
     @include tablet {

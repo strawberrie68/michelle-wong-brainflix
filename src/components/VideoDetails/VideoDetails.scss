@@ -17,9 +17,8 @@
 
     &--right {
       @include desktop-border-padding-right;
-      @include flex-column;
+      @include flex-column-gap($gap-small);
       width: 51%;
-      gap: $gap-small;
 
       @include tablet {
         flex-direction: row;
@@ -29,8 +28,7 @@
 
     &--left {
       width: 60%;
-      @include flex-column;
-      gap: $gap-small;
+      @include flex-column-gap($gap-small);
 
       @include tablet {
         flex-direction: row;
@@ -39,6 +37,7 @@
       }
     }
   }
+
   &__info {
     color: $primary-gray;
   }

@@ -31,9 +31,8 @@
   }
 
   &__content {
-    @include flex-column;
+    @include flex-column-gap($gap-small);
     flex-basis: 100%;
-    gap: $gap-small;
     margin-bottom: $gap-small;
 
     @include tablet {
@@ -47,7 +46,7 @@
   }
 
   &__field {
-    @include flex-column;
+    @include flex-column-gap(null);
 
     @include tablet {
       flex-basis: 90%;

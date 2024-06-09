@@ -15,8 +15,8 @@
 .video-details__metadata--right {
   display: flex;
   flex-direction: column;
-  width: 51%;
   gap: 1rem;
+  width: 51%;
 }
 @media screen and (min-width: 80rem) {
   .video-details__metadata--right {

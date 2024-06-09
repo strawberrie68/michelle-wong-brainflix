@@ -192,8 +192,8 @@ body {
 .comment-form__content {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
   gap: 1rem;
+  flex-basis: 100%;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 47.9375rem) {
