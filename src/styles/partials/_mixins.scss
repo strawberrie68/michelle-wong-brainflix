@@ -48,7 +48,7 @@
 }
 
 @mixin border-position($position) {
-  border-#{$position}: 1px solid $secondary-gray;
+  border-#{$position}: $default-border;
 }
 
 @mixin section-max-width {
@@ -65,6 +65,11 @@
 @mixin flex-column {
   display: flex;
   flex-direction: column;
+}
+
+@mixin flex-column-gap($gap: null) {
+  @include flex-column;
+  gap: $gap;
 }
 
 @mixin input-styles {

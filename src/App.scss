@@ -7,7 +7,7 @@
   &__body {
     @include desktop {
       flex-basis: 92%;
-      border-right: 1px solid $secondary-gray;
+      border-right: $default-border;
     }
   }
   @include section-max-width;
