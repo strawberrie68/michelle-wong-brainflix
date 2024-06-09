@@ -28,6 +28,6 @@
 }
 .button__body {
   flex-basis: calc(100% - 4.5rem);
-  font-weight: 500;
+  font-weight: 600;
   color: #ffffff;
 }/*# sourceMappingURL=Button.css.map */
