@@ -1,12 +1,11 @@
 import { useState } from "react";
-import videoData from "./data/video-details.json";
+import videoData from "../../data/video-details.json";
 import "./Home.scss";
 
-import Navbar from "../src/components/Navbar/Navbar.jsx";
-import VideoCard from "./components/VideoCard/VideoCard.jsx";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
-import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
-import CommentSection from "./components/CommentSection/CommentSection.jsx";
+import VideoCard from "../../components/VideoCard/VideoCard.jsx";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer.jsx";
+import VideoDetails from "../../components/VideoDetails/VideoDetails.jsx";
+import CommentSection from "../../components/CommentSection/CommentSection.jsx";
 
 const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
@@ -21,7 +20,6 @@ const Home = () => {
   }
   return (
     <>
-      <Navbar />
       <main className="main-content">
         <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
