@@ -18,6 +18,9 @@
     padding-left: $gap-small;
     padding-right: $gap-small;
   }
+  &__link {
+    text-decoration: none;
+  }
 
   &__header {
     @include border-position($position: bottom);

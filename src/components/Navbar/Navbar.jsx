@@ -17,12 +17,12 @@ const Navbar = () => {
             <SearchBar />
             <Avatar position="top" isDefault={false} />
           </div>
-          {/* <Link to="/upload" className="nav__link"> */}
-          <div className="nav__bottom">
-            <Button buttonText="UPLOAD" icon="upload" />
-            <Avatar position="bottom" isDefault={false} />
-          </div>
-          {/* </Link> */}
+          <Link to="/upload" className="nav__link">
+            <div className="nav__bottom">
+              <Button buttonText="UPLOAD" icon="upload" />
+              <Avatar position="bottom" isDefault={false} />
+            </div>
+          </Link>
         </div>
       </nav>
     </header>
