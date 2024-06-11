@@ -19,7 +19,7 @@ const CommentForm = () => {
           ></input>
         </div>
         <div className="comment-form__button">
-          <Button buttonText="COMMENT" icon="comment" />
+          <Button text="COMMENT" icon="comment" />
         </div>
       </div>
     </form>

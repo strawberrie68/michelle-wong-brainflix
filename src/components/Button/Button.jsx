@@ -1,9 +1,14 @@
 import upload from "../../assets/icons/upload.svg";
 import comment from "../../assets/icons/add_comment.svg";
+import publish from "../../assets/icons/publish.svg";
 import "./Button.scss";
 
-const Button = ({ icon, buttonText }) => {
-  const buttonIcon = icon == "upload" ? upload : comment;
+const Button = ({ icon, text }) => {
+  const buttonIcon =
+    icon == "upload" ? upload : icon === "comment" ? comment : publish;
+
+  const buttonText = text.toUpperCase();
+
   return (
     <button className="button label-text">
       <img
