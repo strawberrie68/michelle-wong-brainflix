@@ -1,0 +1,44 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
+
+.upload {
+  &__image {
+    max-width: 100%;
+  }
+  &__label {
+    color: $primary-gray;
+    margin-bottom: 0.25rem;
+    padding-top: 1rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-medium;
+  }
+  &__form-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    @extend .input-border;
+    @include input-styles;
+    display: flex;
+
+    box-sizing: border-box;
+    &--textarea {
+      @extend .input-border;
+      @include input-styles;
+      height: 6.25rem;
+      &::placeholder {
+        transform: translateY(0.75rem);
+        font-weight: 500;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: $gap-small;
+    flex-direction: column;
+  }
+}
