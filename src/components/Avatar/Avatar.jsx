@@ -1,4 +1,4 @@
-import "./Avatar.css";
+import "./Avatar.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 const Avatar = ({ position, isDefault }) => {
