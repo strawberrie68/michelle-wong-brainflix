@@ -1,19 +1,23 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
-import Home from "./pages/Home/Home";
-import VideoDetails from "./pages/VideoDetails/VideoDetails";
+import { useLocation } from "react-router-dom";
+import VideoDetails from "./pages/VideoPage/VideoPage";
 import VideoUpload from "./pages/VideoUpload/VideoUpload";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  useEffect(() => {}, []);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/video/:id" element={<VideoDetails />} />
+        <Route path="/" element={<VideoDetails />} />
+        <Route path="/video/:videoId" element={<VideoDetails />} />
         <Route path="/upload" element={<VideoUpload />} />
       </Routes>
     </>
