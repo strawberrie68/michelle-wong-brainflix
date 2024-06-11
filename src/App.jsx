@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import VideoDetails from "./pages/VideoPage/VideoPage";
+import VideoPage from "./pages/VideoPage/VideoPage";
 import VideoUpload from "./pages/VideoUpload/VideoUpload";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -16,8 +16,8 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<VideoDetails />} />
-        <Route path="/video/:videoId" element={<VideoDetails />} />
+        <Route path="/" element={<VideoPage />} />
+        <Route path="/video/:videoId" element={<VideoPage />} />
         <Route path="/upload" element={<VideoUpload />} />
       </Routes>
     </>
