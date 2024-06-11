@@ -19,7 +19,7 @@ const Navbar = () => {
           </div>
           <Link to="/upload" className="nav__link">
             <div className="nav__bottom">
-              <Button text="UPLOAD" icon="upload" />
+              <Button text="UPLOAD" icon="upload" isPrimary={true} />
               <Avatar position="bottom" isDefault={false} />
             </div>
           </Link>

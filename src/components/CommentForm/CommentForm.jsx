@@ -19,7 +19,7 @@ const CommentForm = () => {
           ></input>
         </div>
         <div className="comment-form__button">
-          <Button text="COMMENT" icon="comment" />
+          <Button text="COMMENT" icon="comment" isPrimary={true} />
         </div>
       </div>
     </form>
