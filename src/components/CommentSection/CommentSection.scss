@@ -7,7 +7,7 @@
     font-weight: 600;
 
     @include tablet {
-      margin: 1.5rem 0;
+      margin: $gap-medium 0;
     }
 
     @include desktop {
