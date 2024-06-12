@@ -3,27 +3,40 @@
 @use "../../styles/partials/globals" as *;
 
 .upload {
+  &__form {
+    @include desktop {
+      @include section-max-width;
+      margin: 0 auto;
+      padding: 0 $gap-medium;
+    }
+  }
+
   &__title {
     @include section-max-width;
-    padding: 36px 0 24px;
+    margin: 2.25rem auto $gap-medium;
   }
 
   &__body {
+    @include flex-column-gap(null);
+
     @include tablet {
       @include border-position($position: top);
+      @include border-position($position: bottom);
     }
-
     @include desktop {
-      display: flex;
       @include section-max-width;
-      margin: 0 auto;
-      gap: 1.5rem;
+      flex-direction: row;
+      gap: $gap-medium;
     }
   }
 
   &__thumbnail-section {
+    > .upload__label {
+      margin-top: $gap-medium;
+    }
+
     @include desktop {
-      flex-basis: 48%;
+      flex-basis: 50%;
     }
   }
 
@@ -41,27 +54,20 @@
   }
 
   &__label {
-    color: $primary-gray;
     margin-bottom: 0.25rem;
-    padding-top: 1rem;
-  }
-
-  &__form-section {
+    margin-top: $gap-small;
+    color: $primary-gray;
     @include desktop {
-      flex-basis: 100%;
+      margin-top: $gap-medium;
     }
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-medium;
-  }
-
-  &__form-inner {
-    display: flex;
-    flex-direction: column;
-    border: none;
+  &__form-section {
+    @include flex-column-gap(null);
+    margin-bottom: $gap-medium;
+    @include desktop {
+      flex-basis: 100%;
+    }
   }
 
   &__input {
@@ -78,17 +84,20 @@
       &::placeholder {
         transform: translateY(0.75rem);
         font-weight: 500;
+
+        @include tablet {
+          transform: translateY($gap-small);
+        }
       }
     }
   }
 
-  &__buttons {
-    display: flex;
-    gap: $gap-small;
-    flex-direction: column;
+  &__footer {
+    @include flex-column-gap($gap-small);
 
     @include tablet {
       flex-direction: row-reverse;
+      margin-top: $gap-medium;
     }
   }
 }
