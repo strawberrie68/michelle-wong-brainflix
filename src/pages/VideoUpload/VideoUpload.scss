@@ -95,10 +95,6 @@
 
       &::placeholder {
         font-weight: 500;
-
-        @include tablet {
-          transform: translateY($gap-small);
-        }
       }
     }
   }

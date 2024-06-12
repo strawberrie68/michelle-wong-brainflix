@@ -40,15 +40,14 @@ const VideoUpload = () => {
   return (
     <main className="upload section-wrapper">
       <h1 className="upload__title">Upload Video</h1>
+      {submitSuccessful && (
+        <Alert
+          type="success"
+          message="Successfully Uploaded Video. You will be shortly redirected. "
+        />
+      )}
       <form className="upload__form" onSubmit={handleSubmit}>
         <div className="upload__body">
-          {submitSuccessful && (
-            <Alert
-              type="success"
-              message="Successfully Uploaded Video. You will be shortly redirected. "
-            />
-          )}
-
           <section className="upload__thumbnail-section">
             <p className="upload__label label-text">VIDEO THUMBNAIL</p>
             <figure className="upload__preview">
