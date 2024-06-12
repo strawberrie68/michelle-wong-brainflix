@@ -13,7 +13,11 @@
 
   &__title {
     @include section-max-width;
-    margin: 2.25rem auto $gap-medium;
+    margin: $gap-medium auto 0 auto;
+
+    @include tablet {
+      margin: 2.25rem auto $gap-medium;
+    }
   }
 
   &__body {
@@ -23,6 +27,7 @@
       @include border-position($position: top);
       @include border-position($position: bottom);
     }
+
     @include desktop {
       @include section-max-width;
       flex-direction: row;
@@ -57,6 +62,7 @@
     margin-bottom: 0.25rem;
     margin-top: $gap-small;
     color: $primary-gray;
+
     @include desktop {
       margin-top: $gap-medium;
     }
@@ -65,6 +71,7 @@
   &__form-section {
     @include flex-column-gap(null);
     margin-bottom: $gap-medium;
+
     @include desktop {
       flex-basis: 100%;
     }
@@ -80,9 +87,13 @@
       @extend .input-border;
       @include input-styles;
       height: 6.44rem;
+      padding-top: 0.75rem;
+
+      @include tablet {
+        padding-top: $gap-small;
+      }
 
       &::placeholder {
-        transform: translateY(0.75rem);
         font-weight: 500;
 
         @include tablet {
