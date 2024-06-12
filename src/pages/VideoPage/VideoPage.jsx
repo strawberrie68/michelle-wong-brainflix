@@ -12,7 +12,7 @@ import CommentSection from "../../components/CommentSection/CommentSection.jsx";
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [selectedVideoId, setSelectedVideoId] = useState([]);
+  const [selectedVideoId, setSelectedVideoId] = useState("");
   const [selectedVideo, setSelectedVideo] = useState([]);
   const [videos, setVideos] = useState([]);
   const { videoId } = useParams();

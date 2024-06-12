@@ -3,42 +3,92 @@
 @use "../../styles/partials/globals" as *;
 
 .upload {
+  &__title {
+    @include section-max-width;
+    padding: 36px 0 24px;
+  }
+
+  &__body {
+    @include tablet {
+      @include border-position($position: top);
+    }
+
+    @include desktop {
+      display: flex;
+      @include section-max-width;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+  }
+
+  &__thumbnail-section {
+    @include desktop {
+      flex-basis: 48%;
+    }
+  }
+
   &__image {
     max-width: 100%;
+    aspect-ratio: 16 / 9;
+
+    @include tablet {
+      max-width: 50%;
+    }
+
+    @include desktop {
+      max-width: 100%;
+    }
   }
+
   &__label {
     color: $primary-gray;
     margin-bottom: 0.25rem;
     padding-top: 1rem;
   }
+
+  &__form-section {
+    @include desktop {
+      flex-basis: 100%;
+    }
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
     gap: $gap-medium;
   }
+
   &__form-inner {
     display: flex;
     flex-direction: column;
+    border: none;
   }
+
   &__input {
     @extend .input-border;
     @include input-styles;
     display: flex;
-
     box-sizing: border-box;
+
     &--textarea {
       @extend .input-border;
       @include input-styles;
-      height: 6.25rem;
+      height: 6.44rem;
+
       &::placeholder {
         transform: translateY(0.75rem);
         font-weight: 500;
       }
     }
   }
+
   &__buttons {
     display: flex;
     gap: $gap-small;
     flex-direction: column;
+
+    @include tablet {
+      flex-direction: row-reverse;
+    }
   }
 }
