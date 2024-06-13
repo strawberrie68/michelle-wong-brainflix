@@ -75,3 +75,7 @@
     color: $primary-dark;
   }
 }
+
+@mixin max-character-width {
+  max-width: 75ch;
+}
