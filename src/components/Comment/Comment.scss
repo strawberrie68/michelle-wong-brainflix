@@ -49,4 +49,12 @@
   &__copy {
     @include max-character-width;
   }
+  &__metadata {
+    display: flex;
+    gap: $gap-small;
+  }
+
+  &__delete {
+    height: 1rem;
+  }
 }
