@@ -11,7 +11,7 @@ import CommentSection from "../../components/CommentSection/CommentSection.jsx";
 
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const [selectedVideoId, setSelectedVideoId] = useState("");
   const [selectedVideo, setSelectedVideo] = useState([]);
   const [videos, setVideos] = useState([]);
@@ -57,6 +57,21 @@ const VideoPage = () => {
       );
     }
   };
+
+  const handleDeleteComment = async (commentId) => {
+    try {
+      await axios.delete(
+        `${API_URL}/videos/${videoId}/comments/${commentId}?api_key=${API_KEY}`
+      );
+      fetchVideoDetails();
+    } catch (error) {
+      setError(
+        "We could not delete comment at this time. Please try again." +
+          { error }
+      );
+    }
+  };
+
   useEffect(() => {
     getVideos();
   }, [videoId]);
@@ -84,6 +99,7 @@ const VideoPage = () => {
               comments={selectedVideo.comments}
               isLoading={isLoading}
               handleCommentSubmit={handleCommentSubmit}
+              handleDeleteComment={handleDeleteComment}
             />
           </div>
           <aside className="recommend section-wrapper">

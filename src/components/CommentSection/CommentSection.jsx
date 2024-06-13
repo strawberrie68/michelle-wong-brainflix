@@ -7,6 +7,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 const CommentSection = ({
   comments,
   handleCommentSubmit,
+  handleDeleteComment,
 }) => {
   if (comments === undefined) {
     return <p className="section-wrapper">Loading comments...</p>;
@@ -23,6 +24,7 @@ const CommentSection = ({
           <Comment
             key={comment.id}
             commentData={comment}
+            handleDeleteComment={handleDeleteComment}
           />
         );
       })}
