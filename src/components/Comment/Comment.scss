@@ -46,4 +46,7 @@
 
     @include desktop-border-padding-right;
   }
+  &__copy {
+    @include max-character-width;
+  }
 }

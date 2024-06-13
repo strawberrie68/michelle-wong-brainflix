@@ -29,10 +29,10 @@ const VideoUpload = () => {
     setValues(values);
 
     setSubmitSuccessful(true);
+    setValues(initialValues);
 
     setTimeout(() => {
       setSubmitSuccessful(false);
-      setValues(initialValues);
       navigate("/");
     }, 4000);
   };

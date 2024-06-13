@@ -45,12 +45,10 @@ const VideoPage = () => {
   }, [videoId]);
 
   useEffect(() => {
-    fetchVideoDetails();
+    if (selectedVideoId) {
+      fetchVideoDetails();
+    }
   }, [selectedVideoId]);
-
-  if (isLoading) {
-    return <p> Loading video data...</p>;
-  }
 
   if (error) {
     return (
@@ -69,21 +67,41 @@ const VideoPage = () => {
         <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
           <div className="video-content__body">
-            <VideoDetails video={selectedVideo} />
-            <CommentSection comments={selectedVideo.comments} />
+            <VideoDetails video={selectedVideo} isLoading={isLoading} />
+            <CommentSection
+              comments={selectedVideo.comments}
+              isLoading={isLoading}
+            />
           </div>
           <aside className="recommend section-wrapper">
             <p className="recommend__title label-text">NEXT VIDEOS</p>
             <div className="recommend__list">
-              {filteredVideos.map((video) => {
-                return (
-                  <div key={video.id}>
-                    <Link to={`/video/${video.id}`} className="recommend__link">
-                      <VideoCard key={video.id} video={video} id={video.id} />
-                    </Link>
-                  </div>
-                );
-              })}
+              {isLoading && (
+                <div className="recommend__loading">
+                  <VideoCard isLoading={isLoading} />
+                  <VideoCard isLoading={isLoading} />
+                  <VideoCard isLoading={isLoading} />
+                </div>
+              )}
+
+              {!isLoading &&
+                filteredVideos.map((video) => {
+                  return (
+                    <div key={video.id}>
+                      <Link
+                        to={`/video/${video.id}`}
+                        className="recommend__link"
+                      >
+                        <VideoCard
+                          key={video.id}
+                          video={video}
+                          id={video.id}
+                          isLoading={isLoading}
+                        />
+                      </Link>
+                    </div>
+                  );
+                })}
             </div>
           </aside>
         </section>
