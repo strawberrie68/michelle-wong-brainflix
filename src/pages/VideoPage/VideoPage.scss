@@ -54,4 +54,10 @@
   &__link {
     text-decoration: none;
   }
+
+  &__loading {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-small;
+  }
 }
