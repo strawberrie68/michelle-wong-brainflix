@@ -24,9 +24,8 @@ const VideoPage = () => {
       setSelectedVideoId(videoId || response.data[0].id);
       setIsLoading(false);
     } catch (error) {
-      setError(
-        "An error occurred while fetching videos. Please try again." + { error }
-      );
+      setError("An error occurred while fetching videos. Please try again.");
+      console.error({ error });
     }
   };
 
@@ -38,37 +37,34 @@ const VideoPage = () => {
       setSelectedVideo(response.data);
     } catch (error) {
       setError(
-        "An error occurred while fetching video details. Please try again." +
-          { error }
+        "An error occurred while fetching video details. Please try again."
       );
+      console.error({ error });
     }
   };
 
   const handleCommentSubmit = async (comment) => {
     try {
       await axios.post(
-        `${API_URL}/videos/${videoId}/comments?api_key=${API_KEY}`,
+        `${API_URL}/videos/${selectedVideoId}/comments?api_key=${API_KEY}`,
         comment
       );
       fetchVideoDetails();
     } catch (error) {
-      setError(
-        "We could not post comment at this time. Please try again." + { error }
-      );
+      setError("We could not post comment at this time. Please try again.");
+      console.error({ error });
     }
   };
 
   const handleDeleteComment = async (commentId) => {
     try {
       await axios.delete(
-        `${API_URL}/videos/${videoId}/comments/${commentId}?api_key=${API_KEY}`
+        `${API_URL}/videos/${selectedVideoId}/comments/${commentId}?api_key=${API_KEY}`
       );
       fetchVideoDetails();
     } catch (error) {
-      setError(
-        "We could not delete comment at this time. Please try again." +
-          { error }
-      );
+      setError("We could not delete comment at this time. Please try again.");
+      console.error({ error });
     }
   };
 
