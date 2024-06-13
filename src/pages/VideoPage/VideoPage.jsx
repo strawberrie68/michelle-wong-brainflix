@@ -24,8 +24,9 @@ const VideoPage = () => {
       setSelectedVideoId(videoId || response.data[0].id);
       setIsLoading(false);
     } catch (error) {
-      console.error(error);
-      setError(true);
+      setError(
+        "An error occurred while fetching videos. Please try again." + { error }
+      );
     }
   };
 
@@ -36,7 +37,10 @@ const VideoPage = () => {
       );
       setSelectedVideo(response.data);
     } catch (error) {
-      console.error(error);
+      setError(
+        "An error occurred while fetching video details. Please try again." +
+          { error }
+      );
     }
   };
 
@@ -51,12 +55,7 @@ const VideoPage = () => {
   }, [selectedVideoId]);
 
   if (error) {
-    return (
-      <p>
-        Sorry, we encountered an error with the server. Please try again or
-        refresh the page.
-      </p>
-    );
+    return <p className="section-wrapper">{error}</p>;
   }
 
   const filteredVideos = videos.filter((video) => video.id !== selectedVideoId);
@@ -76,32 +75,24 @@ const VideoPage = () => {
           <aside className="recommend section-wrapper">
             <p className="recommend__title label-text">NEXT VIDEOS</p>
             <div className="recommend__list">
-              {isLoading && (
-                <div className="recommend__loading">
-                  <VideoCard isLoading={isLoading} />
-                  <VideoCard isLoading={isLoading} />
-                  <VideoCard isLoading={isLoading} />
-                </div>
-              )}
-
-              {!isLoading &&
-                filteredVideos.map((video) => {
-                  return (
+              {isLoading
+                ? Array(3)
+                    .fill()
+                    .map((_, i) => <VideoCard key={i} isLoading={isLoading} />)
+                : filteredVideos.map((video) => (
                     <div key={video.id}>
                       <Link
                         to={`/video/${video.id}`}
                         className="recommend__link"
                       >
                         <VideoCard
-                          key={video.id}
                           video={video}
                           id={video.id}
                           isLoading={isLoading}
                         />
                       </Link>
                     </div>
-                  );
-                })}
+                  ))}
             </div>
           </aside>
         </section>
