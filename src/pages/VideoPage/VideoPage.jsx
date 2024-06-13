@@ -44,6 +44,19 @@ const VideoPage = () => {
     }
   };
 
+  const handleCommentSubmit = async (comment) => {
+    try {
+      await axios.post(
+        `${API_URL}/videos/${videoId}/comments?api_key=${API_KEY}`,
+        comment
+      );
+      fetchVideoDetails();
+    } catch (error) {
+      setError(
+        "We could not post comment at this time. Please try again." + { error }
+      );
+    }
+  };
   useEffect(() => {
     getVideos();
   }, [videoId]);
@@ -70,6 +83,7 @@ const VideoPage = () => {
             <CommentSection
               comments={selectedVideo.comments}
               isLoading={isLoading}
+              handleCommentSubmit={handleCommentSubmit}
             />
           </div>
           <aside className="recommend section-wrapper">

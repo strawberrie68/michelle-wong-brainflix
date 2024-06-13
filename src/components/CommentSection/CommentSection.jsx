@@ -4,18 +4,27 @@ import CommentForm from "../CommentForm/CommentForm";
 import "./CommentSection.scss";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const CommentSection = ({ comments }) => {
+const CommentSection = ({
+  comments,
+  handleCommentSubmit,
+}) => {
   if (comments === undefined) {
     return <p className="section-wrapper">Loading comments...</p>;
   }
+  const sortedComments = comments.sort((a, b) => b.timestamp - a.timestamp);
   return (
     <section className="comment-section section-wrapper">
       <p className="comment-section__title">
         {comments ? `${comments.length} Comments` : <Skeleton />}{" "}
       </p>
-      <CommentForm />
-      {comments.map((comment) => {
-        return <Comment key={comment.id} commentData={comment} />;
+      <CommentForm handleCommentSubmit={handleCommentSubmit} />
+      {sortedComments.map((comment) => {
+        return (
+          <Comment
+            key={comment.id}
+            commentData={comment}
+          />
+        );
       })}
     </section>
   );

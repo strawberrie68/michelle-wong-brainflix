@@ -1,10 +1,34 @@
 import "./CommentForm.scss";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
+import { useState } from "react";
 
-const CommentForm = () => {
+const initialValues = {
+  comment: "",
+  name: "Michelle Wong",
+};
+
+const CommentForm = ({ handleCommentSubmit }) => {
+  const [values, setValues] = useState(initialValues);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setValues(values);
+    handleCommentSubmit(values);
+    setValues(initialValues);
+  };
+
   return (
-    <form className="comment-form">
+    <form className="comment-form" onSubmit={handleSubmit}>
       <div className="comment-form__avatar">
         <Avatar isDefault={false} />
       </div>
@@ -16,10 +40,18 @@ const CommentForm = () => {
           <input
             className="comment-form__input"
             placeholder="Add a new comment"
+            name="comment"
+            value={values.comment}
+            onChange={handleInputChange}
           ></input>
         </div>
         <div className="comment-form__button">
-          <Button text="COMMENT" icon="comment" isPrimary={true} />
+          <Button
+            type="submit"
+            text="COMMENT"
+            icon="comment"
+            isPrimary={true}
+          />
         </div>
       </div>
     </form>
