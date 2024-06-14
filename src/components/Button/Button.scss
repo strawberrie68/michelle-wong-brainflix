@@ -9,15 +9,9 @@
   gap: $gap-small;
   border: none;
   border-radius: $border-radius;
-  // background-color: $primary-color;
-
-  &:hover {
-    background-color: $secondary-color;
-  }
 
   @include tablet {
-    min-width: 9.375rem;
-    max-width: 12.5rem;
+    width: 9.375rem;
   }
 
   &__icon {
@@ -30,10 +24,27 @@
   &__body {
     flex-basis: calc(100% - 4.5rem);
     font-weight: 600;
+
+    &--primary {
+      color: $primary-light;
+    }
+
+    &--secondary {
+      color: $primary-color;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
   }
+
   &--primary {
     background-color: $primary-color;
     color: $primary-light;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
 
   &--secondary {

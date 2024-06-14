@@ -9,6 +9,10 @@ const Button = ({ icon, text, isPrimary }) => {
 
   const buttonText = text.toUpperCase();
   const buttonType = isPrimary ? "button--primary" : "button--secondary";
+  const textClass = isPrimary
+    ? "button__body--primary"
+    : "button__body--secondary";
+
   return (
     <button className={`button label-text ${buttonType}`}>
       {icon !== "none" && (
@@ -18,7 +22,7 @@ const Button = ({ icon, text, isPrimary }) => {
           alt={`${buttonText} icon for button`}
         />
       )}
-      <p className={`button__body ${buttonType}`}>{buttonText}</p>
+      <p className={`button__body ${textClass}`}>{buttonText}</p>
     </button>
   );
 };
