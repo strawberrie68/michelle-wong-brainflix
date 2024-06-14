@@ -47,7 +47,8 @@ const VideoUpload = () => {
         />
       )}
       <form className="upload__form" onSubmit={handleSubmit}>
-        <div className="upload__body">
+        <fieldset className="upload__body">
+          <legend className="visually-hidden">Upload Video</legend>
           <section className="upload__thumbnail-section">
             <p className="upload__label label-text">VIDEO THUMBNAIL</p>
             <figure className="upload__preview">
@@ -85,7 +86,7 @@ const VideoUpload = () => {
               onChange={handleInputChange}
             />
           </section>
-        </div>
+        </fieldset>
         <div className="upload__footer">
           <Button
             type="submit"

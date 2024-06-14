@@ -21,6 +21,7 @@
   }
 
   &__body {
+    border: none;
     @include flex-column-gap(null);
 
     @include tablet {
@@ -47,7 +48,6 @@
 
   &__image {
     max-width: 100%;
-    aspect-ratio: 16 / 9;
 
     @include tablet {
       max-width: 50%;
@@ -86,7 +86,7 @@
     &--textarea {
       @extend .input-border;
       @include input-styles;
-      height: 6.44rem;
+      height: 4.54rem;
       padding-top: 0.75rem;
 
       @include tablet {
