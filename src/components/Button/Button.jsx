@@ -3,7 +3,7 @@ import comment from "../../assets/icons/add_comment.svg";
 import publish from "../../assets/icons/publish.svg";
 import "./Button.scss";
 
-const Button = ({ icon, text, isPrimary }) => {
+const Button = ({ type, icon, text, isPrimary, handleCancelForm }) => {
   const buttonIcon =
     icon == "upload" ? upload : icon === "comment" ? comment : publish;
 
@@ -14,7 +14,11 @@ const Button = ({ icon, text, isPrimary }) => {
     : "button__body--secondary";
 
   return (
-    <button className={`button label-text ${buttonType}`}>
+    <button
+      type={type}
+      className={`button label-text ${buttonType}`}
+      onClick={handleCancelForm}
+    >
       {icon !== "none" && (
         <img
           className="button__icon"

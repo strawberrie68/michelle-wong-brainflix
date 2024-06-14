@@ -27,7 +27,6 @@ const VideoUpload = () => {
     e.preventDefault();
 
     setValues(values);
-
     setSubmitSuccessful(true);
     setValues(initialValues);
 
@@ -35,6 +34,12 @@ const VideoUpload = () => {
       setSubmitSuccessful(false);
       navigate("/");
     }, 4000);
+  };
+
+  const handleCancelForm = () => {
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
   };
 
   return (
@@ -94,7 +99,13 @@ const VideoUpload = () => {
             text="PUBLISH"
             isPrimary={true}
           />
-          <Button icon="none" text="CANCEL" isPrimary={false} />
+          <Button
+            type="button"
+            icon="none"
+            text="CANCEL"
+            isPrimary={false}
+            handleCancelForm={handleCancelForm}
+          />
         </div>
       </form>
     </main>
