@@ -16,6 +16,10 @@
     margin: $gap-medium auto 0 auto;
 
     @include tablet {
+      margin: 2.25rem 0 $gap-medium;
+    }
+
+    @include desktop {
       margin: 2.25rem auto $gap-medium;
     }
   }

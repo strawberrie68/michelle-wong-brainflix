@@ -15,7 +15,8 @@
 
   @include desktop {
     @include section-max-width;
+    width: 71%;
     margin: $gap-small auto;
-    padding: $gap-medium $gap-medium;
+    padding: $gap-medium $gap-small;
   }
 }
