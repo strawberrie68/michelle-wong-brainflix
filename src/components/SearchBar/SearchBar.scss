@@ -9,8 +9,11 @@
   flex-basis: 100%;
   gap: $gap-x-small;
   min-width: 15rem;
-
   box-sizing: border-box;
+
+  &.focused {
+    border: 2px solid $primary-color;
+  }
 
   &__icon {
     flex-basis: $gap-small;
@@ -21,5 +24,9 @@
     @include input-styles;
     border: none;
     flex-basis: 100%;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
