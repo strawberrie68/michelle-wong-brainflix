@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const initialValues = {
   comment: "",
-  name: "Michelle Wong",
+  name: "Git Skywalker",
 };
 
 const CommentForm = ({ handleCommentSubmit }) => {
@@ -32,7 +32,7 @@ const CommentForm = ({ handleCommentSubmit }) => {
       <div className="comment-form__avatar">
         <Avatar isDefault={false} />
       </div>
-      <div className="comment-form__content">
+      <section className="comment-form__content">
         <div className="comment-form__field">
           <label htmlFor="comment" className="comment-form__label label-text">
             JOIN THE CONVERSATION
@@ -53,7 +53,7 @@ const CommentForm = ({ handleCommentSubmit }) => {
             isPrimary={true}
           />
         </div>
-      </div>
+      </section>
     </form>
   );
 };

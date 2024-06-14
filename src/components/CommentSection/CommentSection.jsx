@@ -16,7 +16,7 @@ const CommentSection = ({
   return (
     <section className="comment-section section-wrapper">
       <p className="comment-section__title">
-        {comments ? `${comments.length} Comments` : <Skeleton />}{" "}
+        {comments ? `${comments.length} Comments` : <Skeleton />}
       </p>
       <CommentForm handleCommentSubmit={handleCommentSubmit} />
       {sortedComments.map((comment) => {

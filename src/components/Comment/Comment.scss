@@ -40,9 +40,7 @@
   }
 
   &__details {
-    @include tablet {
-      flex-basis: 100%;
-    }
+    flex-basis: 100%;
 
     @include desktop-border-padding-right;
   }
