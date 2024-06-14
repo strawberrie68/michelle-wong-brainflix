@@ -13,6 +13,8 @@ const initialValues = {
 const VideoUpload = () => {
   const [values, setValues] = useState(initialValues);
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("success");
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -45,12 +47,12 @@ const VideoUpload = () => {
   return (
     <main className="upload section-wrapper">
       <h1 className="upload__title">Upload Video</h1>
-      {submitSuccessful && (
-        <Alert
-          type="success"
-          message="Successfully Uploaded Video. You will be shortly redirected. "
-        />
-      )}
+      {/* {submitSuccessful && ( */}
+      <Alert
+        type="success"
+        message="Successfully Uploaded Video. You will be shortly redirected. "
+      />
+      {/* )} */}
       <form className="upload__form" onSubmit={handleSubmit}>
         <fieldset className="upload__body">
           <legend className="visually-hidden">Upload Video</legend>

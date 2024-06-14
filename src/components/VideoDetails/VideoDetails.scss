@@ -30,8 +30,8 @@
     }
 
     &--left {
-      width: 60%;
       @include flex-column-gap($gap-small);
+      width: 60%;
 
       @include tablet {
         flex-direction: row;
@@ -69,8 +69,8 @@
 
   &__copy {
     @include max-character-width;
-    margin: $gap-small 0;
     @include desktop-border-padding-right;
+    margin: $gap-small 0;
 
     @include tablet {
       margin: $gap-medium 0;

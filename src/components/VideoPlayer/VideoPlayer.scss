@@ -8,9 +8,7 @@
     justify-content: center;
 
     &--loading {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-box($direction: row, $justify: center, $align: center);
     }
 
     @include desktop {

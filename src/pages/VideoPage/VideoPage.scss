@@ -56,8 +56,6 @@
   }
 
   &__loading {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-small;
+    @include flex-column-gap($gap-small);
   }
 }
