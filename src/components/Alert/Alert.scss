@@ -3,7 +3,7 @@
 
 .alert {
   padding: $gap-small;
-  margin-bottom: 1.25rem;
+  margin: 1.25rem auto;
   border: 1px solid transparent;
   border-radius: $border-radius;
 
@@ -15,8 +15,11 @@
 
   @include desktop {
     @include section-max-width;
-    width: 71%;
     margin: $gap-small auto;
-    padding: $gap-medium $gap-small;
+    padding: $gap-small 0;
+  }
+
+  &__body {
+    margin: auto 1rem;
   }
 }
