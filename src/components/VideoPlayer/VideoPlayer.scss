@@ -3,9 +3,9 @@
 
 .video-player {
   &__container {
-    background-color: $secondary-dark;
     display: flex;
     justify-content: center;
+    background-color: $secondary-dark;
 
     &--loading {
       @include flex-box($direction: row, $justify: center, $align: center);
@@ -15,6 +15,7 @@
       margin: 0 auto;
     }
   }
+
   &__loading {
     color: $primary-light;
   }

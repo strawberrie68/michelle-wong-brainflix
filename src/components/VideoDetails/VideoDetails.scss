@@ -5,6 +5,7 @@
   &__title {
     @include desktop-border-padding-right;
   }
+
   &__metadata {
     @include border-position($position: bottom);
     @include border-position($position: top);

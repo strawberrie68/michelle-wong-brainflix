@@ -8,7 +8,7 @@
   border-radius: $border-radius;
 
   &--success {
-    color: #3c763d;
+    color: $success-color;
     background-color: #dff0d8;
     border-color: #d6e9c6;
   }
@@ -16,7 +16,7 @@
   &--error {
     color: $error-color;
     background-color: #f2dede;
-    border-color: $error-color;
+    border: $border-error;
   }
 
   @include desktop {

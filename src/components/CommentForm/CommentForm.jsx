@@ -34,6 +34,7 @@ const CommentForm = ({ handleCommentSubmit }) => {
   };
 
   const errorInComment = error ? "comment-form__input--error" : "";
+
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
       <div className="comment-form__avatar">

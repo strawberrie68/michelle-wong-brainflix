@@ -40,7 +40,7 @@ const VideoUpload = () => {
     setValues(initialValues);
     setAlertStatus("success");
     setMessage(
-      "Successfully Uploaded Video. You will be shortly redirected. :)  "
+      "Successfully Uploaded Video. You will be shortly redirected :)  "
     );
 
     setTimeout(() => {

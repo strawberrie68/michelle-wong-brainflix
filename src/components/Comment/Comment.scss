@@ -2,10 +2,10 @@
 @use "../../styles/partials/mixins" as *;
 
 .comment {
+  @include border-position($position: bottom);
   display: flex;
   gap: $gap-small;
   padding: $gap-small 0;
-  @include border-position($position: bottom);
 
   @include tablet {
     padding: 2.25rem 0;
@@ -40,9 +40,8 @@
   }
 
   &__details {
-    flex-basis: 100%;
-
     @include desktop-border-padding-right;
+    flex-basis: 100%;
   }
 
   &__copy {
@@ -55,6 +54,11 @@
   }
 
   &__delete {
+    border: none;
+    background: none;
+  }
+
+  &__delete-image {
     height: $gap-small;
   }
 }

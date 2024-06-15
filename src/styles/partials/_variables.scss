@@ -10,7 +10,7 @@ $secondary-gray: #e1e1e1;
 $secondary-light: #fafafa;
 
 $error-color: #d22d2d;
-$success-color: #00a650;
+$success-color: #3c763d;
 
 // Breakpoints
 $desktop-breakpoint: 80rem;
@@ -19,6 +19,7 @@ $tablet-breakpoint: 47.9375rem;
 $font-family-avenir-next: "Avenir Next", sans-serif;
 $border-default: 1px solid $secondary-gray;
 $border-focus: 2px solid $primary-color;
+$border-error: 1px solid $error-color;
 
 $border-radius: 4px;
 $gap-x-small: 0.5rem;
