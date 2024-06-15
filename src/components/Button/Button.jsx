@@ -4,8 +4,17 @@ import publish from "../../assets/icons/publish.svg";
 import "./Button.scss";
 
 const Button = ({ type, icon, text, isPrimary, handleCancelForm }) => {
-  const buttonIcon =
-    icon == "upload" ? upload : icon === "comment" ? comment : publish;
+  let buttonIcon;
+  switch (icon) {
+    case "upload":
+      buttonIcon = upload;
+      break;
+    case "comment":
+      buttonIcon = comment;
+      break;
+    default:
+      buttonIcon = publish;
+  }
 
   const buttonText = text.toUpperCase();
   const buttonType = isPrimary ? "button--primary" : "button--secondary";
@@ -23,7 +32,7 @@ const Button = ({ type, icon, text, isPrimary, handleCancelForm }) => {
         <img
           className="button__icon"
           src={buttonIcon}
-          alt={`${buttonText} icon for button`}
+          alt={`${icon} icon for button`}
         />
       )}
       <p className={`button__body ${textClass}`}>{buttonText}</p>
