@@ -17,6 +17,11 @@ const VideoPage = () => {
   const [videos, setVideos] = useState([]);
   const { videoId } = useParams();
 
+  const handleError = (error, message) => {
+    setError(message);
+    console.error({ error });
+  };
+
   const getVideos = async () => {
     try {
       const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
@@ -24,8 +29,10 @@ const VideoPage = () => {
       setSelectedVideoId(videoId || response.data[0].id);
       setIsLoading(false);
     } catch (error) {
-      setError("An error occurred while fetching videos. Please try again.");
-      console.error({ error });
+      handleError(
+        error,
+        "An error occurred while fetching videos. Please try again."
+      );
     }
   };
 
@@ -36,10 +43,10 @@ const VideoPage = () => {
       );
       setSelectedVideo(response.data);
     } catch (error) {
-      setError(
+      handleError(
+        error,
         "An error occurred while fetching video details. Please try again."
       );
-      console.error({ error });
     }
   };
 
@@ -51,8 +58,10 @@ const VideoPage = () => {
       );
       fetchVideoDetails();
     } catch (error) {
-      setError("We could not post comment at this time. Please try again.");
-      console.error({ error });
+      handleError(
+        error,
+        "We could not post comment at this time. Please try again."
+      );
     }
   };
 
@@ -63,8 +72,10 @@ const VideoPage = () => {
       );
       fetchVideoDetails();
     } catch (error) {
-      setError("We could not delete comment at this time. Please try again.");
-      console.error({ error });
+      handleError(
+        error,
+        "We could not delete comment at this time. Please try again."
+      );
     }
   };
 
