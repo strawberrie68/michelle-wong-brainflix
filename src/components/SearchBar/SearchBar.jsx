@@ -1,20 +1,20 @@
 import searchIcon from "../../assets/icons/search.svg";
 import "./SearchBar.scss";
-import { useRef } from "react";
+import { useState } from "react";
 
 const SearchBar = () => {
-  const searchRef = useRef();
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
-    searchRef.current.classList.add("focused");
+    setIsFocused(true);
   };
 
   const handleBlur = () => {
-    searchRef.current.classList.remove("focused");
+    setIsFocused(false);
   };
 
   return (
-    <div tabIndex="0" className="search" ref={searchRef}>
+    <div tabIndex="0" className={`search ${isFocused ? "focused" : ""}`}>
       <img className="search__icon" src={searchIcon} alt="search icon" />
       <input
         className="search__input"
