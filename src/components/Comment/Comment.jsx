@@ -1,7 +1,7 @@
-import Avatar from "../Avatar/Avatar";
 import { convertTimestamp } from "../../utils/utils";
-import "./Comment.scss";
+import Avatar from "../Avatar/Avatar";
 import deleteIcon from "../../assets/icons/delete.svg";
+import "./Comment.scss";
 
 const Comment = ({ commentData, handleDeleteComment }) => {
   const { name, timestamp, comment, id } = commentData;
@@ -11,23 +11,25 @@ const Comment = ({ commentData, handleDeleteComment }) => {
       <div className="comment__avatar">
         <Avatar isDefault={true} />
       </div>
-      <div className="comment__details">
+      <section className="comment__details">
         <div className="comment__info">
           <p className="comment__author">{name}</p>
           <div className="comment__metadata">
             <p className="comment__date">{convertTimestamp(timestamp)}</p>
-            <img
+            <button
               className="comment__delete"
-              src={deleteIcon}
-              alt="delete icon button"
-              onClick={(event) =>
-                handleDeleteComment(event.target.closest(".comment").id)
-              }
-            />
+              onClick={() => handleDeleteComment(id)}
+            >
+              <img
+                className="comment__delete-image"
+                src={deleteIcon}
+                alt="delete icon button"
+              />
+            </button>
           </div>
         </div>
         <div className="comment__copy">{comment}</div>
-      </div>
+      </section>
     </article>
   );
 };
