@@ -75,6 +75,9 @@
     &:focus {
       outline: $border-focus;
     }
+    &--error {
+      border: 1px solid $error-color;
+    }
 
     @include tablet {
       height: 2.5rem;
@@ -93,5 +96,10 @@
     @include tablet {
       margin-top: $gap-medium;
     }
+  }
+
+  &__helper {
+    color: $error-color;
+    padding-top: 0.25rem;
   }
 }
