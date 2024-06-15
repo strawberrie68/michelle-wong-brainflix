@@ -75,6 +75,7 @@
     &:focus {
       outline: $border-focus;
     }
+
     &--error {
       border: 1px solid $error-color;
     }

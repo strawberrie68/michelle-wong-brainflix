@@ -1,9 +1,9 @@
-import "./VideoUpload.scss";
-import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
-import Button from "../../components/Button/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
+import Button from "../../components/Button/Button";
 import Alert from "../../components/Alert/Alert";
+import "./VideoUpload.scss";
 
 const initialValues = {
   title: "",
@@ -12,7 +12,8 @@ const initialValues = {
 
 const VideoUpload = () => {
   const [values, setValues] = useState(initialValues);
-  const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [alertStatus, setAlertStatus] = useState(null);
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -27,30 +28,35 @@ const VideoUpload = () => {
     e.preventDefault();
 
     setValues(values);
-    setSubmitSuccessful(true);
+
+    //currently handleSubmit doesn't send data to the server
+    //but it will stimulate a successful submission if not empty
+    if (!values.title || !values.description) {
+      setAlertStatus("error");
+      setMessage("Error: Please fill out all the fields");
+      return;
+    }
+
     setValues(initialValues);
+    setAlertStatus("success");
+    setMessage(
+      "Successfully Uploaded Video. You will be shortly redirected. :)  "
+    );
 
     setTimeout(() => {
-      setSubmitSuccessful(false);
       navigate("/");
+      setAlertStatus(null);
     }, 4000);
   };
 
   const handleCancelForm = () => {
-    setTimeout(() => {
-      navigate("/");
-    }, 1000);
+    navigate("/");
   };
 
   return (
     <main className="upload section-wrapper">
       <h1 className="upload__title">Upload Video</h1>
-      {submitSuccessful && (
-        <Alert
-          type="success"
-          message="Successfully Uploaded Video. You will be shortly redirected. "
-        />
-      )}
+      {alertStatus && <Alert type={alertStatus} message={message} />}
       <form className="upload__form" onSubmit={handleSubmit}>
         <fieldset className="upload__body">
           <legend className="visually-hidden">Upload Video</legend>
