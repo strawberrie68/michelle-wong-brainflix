@@ -4,7 +4,7 @@
 .comment {
   display: flex;
   gap: $gap-small;
-  padding: 1rem 0;
+  padding: $gap-small 0;
   @include border-position($position: bottom);
 
   @include tablet {
@@ -44,15 +44,17 @@
 
     @include desktop-border-padding-right;
   }
+
   &__copy {
     @include max-character-width;
   }
+
   &__metadata {
     display: flex;
     gap: $gap-small;
   }
 
   &__delete {
-    height: 1rem;
+    height: $gap-small;
   }
 }

@@ -13,8 +13,6 @@ const initialValues = {
 const VideoUpload = () => {
   const [values, setValues] = useState(initialValues);
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("success");
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
