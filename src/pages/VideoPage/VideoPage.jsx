@@ -108,7 +108,7 @@ const VideoPage = () => {
                 : filteredVideos.map((video) => (
                     <div key={video.id}>
                       <Link
-                        to={`/video/${video.id}`}
+                        to={`/videos/${video.id}`}
                         className="recommend__link"
                       >
                         <VideoCard
