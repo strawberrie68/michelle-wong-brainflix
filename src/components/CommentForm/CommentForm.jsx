@@ -28,7 +28,6 @@ const CommentForm = ({ handleCommentSubmit }) => {
       return;
     }
     setError(null);
-    setValues(values);
     handleCommentSubmit(values);
     setValues(initialValues);
   };
