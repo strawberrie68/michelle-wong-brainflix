@@ -63,7 +63,7 @@
   &__body {
     @include desktop {
       flex-basis: 79%;
-      border-right: $default-border;
+      border-right: $border-default;
     }
   }
 

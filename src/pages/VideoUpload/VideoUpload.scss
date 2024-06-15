@@ -87,11 +87,19 @@
     display: flex;
     box-sizing: border-box;
 
+    &:focus {
+      outline: $border-focus;
+    }
+
     &--textarea {
       @extend .input-border;
       @include input-styles;
       height: 4.54rem;
       padding-top: 0.75rem;
+
+      &:focus {
+        outline: $border-focus;
+      }
 
       @include tablet {
         padding-top: $gap-small;

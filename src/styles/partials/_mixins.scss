@@ -48,7 +48,7 @@
 }
 
 @mixin border-position($position) {
-  border-#{$position}: $default-border;
+  border-#{$position}: $border-default;
 }
 
 @mixin section-max-width {

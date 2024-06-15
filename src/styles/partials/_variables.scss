@@ -17,7 +17,8 @@ $desktop-breakpoint: 80rem;
 $tablet-breakpoint: 47.9375rem;
 
 $font-family-avenir-next: "Avenir Next", sans-serif;
-$default-border: 1px solid $secondary-gray;
+$border-default: 1px solid $secondary-gray;
+$border-focus: 2px solid $primary-color;
 
 $border-radius: 4px;
 $gap-x-small: 0.5rem;

@@ -124,7 +124,7 @@ body {
   max-width: 100%;
   border-radius: $border-radius;
   padding: 0 0.75rem;
-  border: $default-border;
+  border: $border-default;
 
   @include tablet {
     height: $gap-large;

@@ -12,7 +12,7 @@
   box-sizing: border-box;
 
   &.focused {
-    border: 2px solid $primary-color;
+    border: $border-focus;
   }
 
   &__icon {

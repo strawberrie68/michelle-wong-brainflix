@@ -71,11 +71,14 @@
       transform: translateY(-1.875rem);
       font-weight: 500;
     }
+    &:focus {
+      outline: $border-focus;
+    }
 
     @include tablet {
       height: 2.5rem;
       padding-top: 0;
-      padding-left: 1rem;
+      padding-left: $gap-small;
       display: flex;
       align-items: center;
 
