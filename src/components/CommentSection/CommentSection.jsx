@@ -9,7 +9,7 @@ const CommentSection = ({
   handleCommentSubmit,
   handleDeleteComment,
 }) => {
-  if (comments === undefined) {
+  if (!comments) {
     return <p className="section-wrapper">Loading comments...</p>;
   }
   const sortedComments = comments.sort((a, b) => b.timestamp - a.timestamp);
