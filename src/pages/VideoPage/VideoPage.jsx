@@ -2,12 +2,13 @@ import "./VideoPage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import { API_URL, API_KEY } from "../../utils/api.js";
 
 import VideoCard from "../../components/VideoCard/VideoCard.jsx";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer.jsx";
 import VideoDetails from "../../components/VideoDetails/VideoDetails.jsx";
 import CommentSection from "../../components/CommentSection/CommentSection.jsx";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +25,7 @@ const VideoPage = () => {
 
   const getVideos = async () => {
     try {
-      const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+      const response = await axios.get(`${API_URL}/videos`);
       setVideos(response.data);
       setSelectedVideoId(videoId || response.data[0].id);
       setIsLoading(false);
@@ -38,9 +39,7 @@ const VideoPage = () => {
 
   const fetchVideoDetails = async () => {
     try {
-      const response = await axios.get(
-        `${API_URL}/videos/${selectedVideoId}?api_key=${API_KEY}`
-      );
+      const response = await axios.get(`${API_URL}/videos/${selectedVideoId}`);
       setSelectedVideo(response.data);
     } catch (error) {
       handleError(
@@ -53,7 +52,7 @@ const VideoPage = () => {
   const handleCommentSubmit = async (comment) => {
     try {
       await axios.post(
-        `${API_URL}/videos/${selectedVideoId}/comments?api_key=${API_KEY}`,
+        `${API_URL}/videos/${selectedVideoId}/comments`,
         comment
       );
       fetchVideoDetails();
@@ -68,7 +67,7 @@ const VideoPage = () => {
   const handleDeleteComment = async (commentId) => {
     try {
       await axios.delete(
-        `${API_URL}/videos/${selectedVideoId}/comments/${commentId}?api_key=${API_KEY}`
+        `${API_URL}/videos/${selectedVideoId}/comments/${commentId}`
       );
       fetchVideoDetails();
     } catch (error) {
