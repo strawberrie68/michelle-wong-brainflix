@@ -3,6 +3,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const VideoCard = ({ video = {}, handleClick, isLoading }) => {
+  const API_URL = import.meta.env.VITE_API_URL;
   const { image, title, channel } = video;
   return (
     <SkeletonTheme color="#E1E1E1" highlightColor="#E1E1E1">
@@ -17,7 +18,7 @@ const VideoCard = ({ video = {}, handleClick, isLoading }) => {
           ) : (
             <img
               className="video-card__image"
-              src={image}
+              src={API_URL + image}
               alt={`${title} Video Thumbnail`}
             />
           )}
