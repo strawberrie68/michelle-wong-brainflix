@@ -5,7 +5,7 @@ import { convertTimestamp } from "../../utils/utils";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const VideoDetails = ({ video, isLoading }) => {
+const VideoDetails = ({ video, isLoading, handleVideoLike }) => {
   const { title, channel, timestamp, views, likes, description } = video;
   return (
     <SkeletonTheme color="#E1E1E1" highlightColor="#E1E1E1">
@@ -39,6 +39,7 @@ const VideoDetails = ({ video, isLoading }) => {
                   className="video-details__icon"
                   src={likeIcon}
                   alt="like icon"
+                  onClick={() => handleVideoLike(video)}
                 />
                 <p className="video-details__info">{likes}</p>
               </div>

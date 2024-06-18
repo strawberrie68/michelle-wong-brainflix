@@ -78,6 +78,8 @@ const VideoPage = () => {
     }
   };
 
+  const handleVideoLike = async (video) => {
+  };
   useEffect(() => {
     getVideos();
   }, [videoId]);
@@ -100,7 +102,11 @@ const VideoPage = () => {
         <VideoPlayer image={selectedVideo.image} />
         <section className="video-content">
           <div className="video-content__body">
-            <VideoDetails video={selectedVideo} isLoading={isLoading} />
+            <VideoDetails
+              video={selectedVideo}
+              isLoading={isLoading}
+              handleVideoLike={handleVideoLike}
+            />
             <CommentSection
               comments={selectedVideo.comments}
               isLoading={isLoading}
