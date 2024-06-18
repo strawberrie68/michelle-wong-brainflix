@@ -44,13 +44,13 @@ const CommentForm = ({ handleCommentSubmit }) => {
           <label htmlFor="comment" className="comment-form__label label-text">
             JOIN THE CONVERSATION
           </label>
-          <input
+          <textarea
             className={`comment-form__input ${errorInComment}`}
             placeholder="Add a new comment"
             name="comment"
             value={values.comment}
             onChange={handleInputChange}
-          ></input>
+          ></textarea>
           <p className="comment-form__helper">{error}</p>
         </div>
         <div className="comment-form__button">
