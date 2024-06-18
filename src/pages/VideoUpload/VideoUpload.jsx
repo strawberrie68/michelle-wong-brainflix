@@ -32,7 +32,8 @@ const VideoUpload = () => {
       const response = await axios.post(`${API_URL}/videos`, video);
       return response.data;
     } catch (error) {
-      console.error(error);
+      setAlertStatus("error");
+      setMessage(error + "Failed to upload video, please try again.  ");
     }
   };
 
