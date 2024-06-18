@@ -2,6 +2,7 @@ import "./VideoPage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { formatLikes } from "../../utils/utils.js";
 
 import VideoCard from "../../components/VideoCard/VideoCard.jsx";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer.jsx";
@@ -79,7 +80,22 @@ const VideoPage = () => {
   };
 
   const handleVideoLike = async (video) => {
+    const updatedVideo = { ...video, likes: formatLikes(video.likes) };
+
+    try {
+      await axios.put(
+        `${API_URL}/videos/${selectedVideoId}/likes`,
+        updatedVideo
+      );
+      fetchVideoDetails();
+    } catch (error) {
+      handleError(
+        error,
+        "We could not process your request at this time. Please try again."
+      );
+    }
   };
+
   useEffect(() => {
     getVideos();
   }, [videoId]);
