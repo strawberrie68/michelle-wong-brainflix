@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import Button from "../../components/Button/Button";
 import Alert from "../../components/Alert/Alert";
+import axios from "axios";
 import "./VideoUpload.scss";
 
 const initialValues = {
   title: "",
   description: "",
 };
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const VideoUpload = () => {
   const [values, setValues] = useState(initialValues);
@@ -24,19 +27,26 @@ const VideoUpload = () => {
     });
   };
 
+  const postVideo = async (video) => {
+    try {
+      const response = await axios.post(`${API_URL}/videos`, video);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setValues(values);
 
-    //currently handleSubmit doesn't send data to the server
-    //but it will stimulate a successful submission if not empty
     if (!values.title || !values.description) {
       setAlertStatus("error");
       setMessage("Error: Please fill out all the fields");
       return;
     }
-
+    postVideo(values);
     setValues(initialValues);
     setAlertStatus("success");
     setMessage(
