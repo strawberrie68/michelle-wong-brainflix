@@ -5,11 +5,10 @@ import { Link, useParams } from "react-router-dom";
 import { formatLikes } from "../../utils/utils.js";
 import { API_URL } from "../../utils/config.js";
 
-import VideoCard from "../../components/VideoCard/VideoCard.jsx";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer.jsx";
 import VideoDetails from "../../components/VideoDetails/VideoDetails.jsx";
 import CommentSection from "../../components/CommentSection/CommentSection.jsx";
-
+import VideoList from "../../components/VideoList/VideoList.jsx";
 
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +47,11 @@ const VideoPage = () => {
         "An error occurred while fetching video details. Please try again."
       );
     }
+  };
+
+  const handleUpdateId = (id) => {
+    setSelectedVideoId(id);
+    fetchVideoDetails();
   };
 
   const handleCommentSubmit = async (comment) => {
@@ -113,49 +117,32 @@ const VideoPage = () => {
   const filteredVideos = videos.filter((video) => video.id !== selectedVideoId);
 
   return (
-    <>
-      <main className="main-content">
-        <VideoPlayer image={selectedVideo.image} />
-        <section className="video-content">
-          <div className="video-content__body">
-            <VideoDetails
-              video={selectedVideo}
-              isLoading={isLoading}
-              handleVideoLike={handleVideoLike}
-            />
-            <CommentSection
-              comments={selectedVideo.comments}
-              isLoading={isLoading}
-              handleCommentSubmit={handleCommentSubmit}
-              handleDeleteComment={handleDeleteComment}
-            />
-          </div>
-          <aside className="recommend section-wrapper">
-            <p className="recommend__title label-text">NEXT VIDEOS</p>
-            <div className="recommend__list">
-              {isLoading
-                ? Array(3)
-                    .fill()
-                    .map((_, i) => <VideoCard key={i} isLoading={isLoading} />)
-                : filteredVideos.map((video) => (
-                    <div key={video.id}>
-                      <Link
-                        to={`/videos/${video.id}`}
-                        className="recommend__link"
-                      >
-                        <VideoCard
-                          video={video}
-                          id={video.id}
-                          isLoading={isLoading}
-                        />
-                      </Link>
-                    </div>
-                  ))}
-            </div>
-          </aside>
-        </section>
-      </main>
-    </>
+    <main className="main-content">
+      <VideoPlayer image={selectedVideo.image} />
+      <section className="video-content">
+        <div className="video-content__body">
+          <VideoDetails
+            video={selectedVideo}
+            isLoading={isLoading}
+            handleVideoLike={handleVideoLike}
+          />
+          <CommentSection
+            comments={selectedVideo.comments}
+            isLoading={isLoading}
+            handleCommentSubmit={handleCommentSubmit}
+            handleDeleteComment={handleDeleteComment}
+          />
+        </div>
+        <aside className="recommend section-wrapper">
+          <p className="recommend__title label-text">NEXT VIDEOS</p>
+          <VideoList
+            filteredVideos={filteredVideos}
+            isLoading={isLoading}
+            handleClick={handleUpdateId}
+          />
+        </aside>
+      </section>
+    </main>
   );
 };
 

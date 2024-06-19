@@ -38,24 +38,6 @@
     }
   }
 
-  &__list {
-    @include flex-column-gap($gap-small);
-
-    @include tablet {
-      gap: $gap-medium;
-      max-width: 50%;
-    }
-
-    @include desktop {
-      max-width: 100%;
-      gap: 1.9rem;
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-  }
-
   &__loading {
     @include flex-column-gap($gap-small);
   }
