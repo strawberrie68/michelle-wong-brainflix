@@ -10,12 +10,14 @@ import "./VideoUpload.scss";
 const initialValues = {
   title: "",
   description: "",
+  image: "/images/Upload-video-preview.jpg",
 };
 
 const VideoUpload = () => {
   const [values, setValues] = useState(initialValues);
   const [alertStatus, setAlertStatus] = useState(null);
   const [message, setMessage] = useState("");
+  const [file, setFile] = useState();
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -26,9 +28,15 @@ const VideoUpload = () => {
     });
   };
 
-  const postVideo = async (video) => {
+  const postVideo = async (videoData) => {
+    const formData = new FormData();
+    for (const key in videoData) {
+      formData.append(key, videoData[key]);
+    }
     try {
-      const response = await axios.post(`${API_URL}/videos`, video);
+      const response = await axios.post(`${API_URL}/videos`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       return response.data;
     } catch (error) {
       setAlertStatus("error");
@@ -39,15 +47,16 @@ const VideoUpload = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setValues(values);
-
     if (!values.title || !values.description) {
       setAlertStatus("error");
       setMessage("Error: Please fill out all the fields");
       return;
     }
-    postVideo(values);
+    const videoData = { ...values, image: file };
+    postVideo(videoData);
     setValues(initialValues);
+    setFile(null);
+
     setAlertStatus("success");
     setMessage(
       "Successfully Uploaded Video. You will be shortly redirected :)  "
@@ -63,6 +72,10 @@ const VideoUpload = () => {
     navigate("/");
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setFile(file);
+  };
   return (
     <main className="upload section-wrapper">
       <h1 className="upload__title">Upload Video</h1>
@@ -77,6 +90,12 @@ const VideoUpload = () => {
                 className="upload__image"
                 src={VideoThumbnail}
                 alt="video image preview"
+              />
+              <input
+                onChange={handleImageChange}
+                type="file"
+                accept="image/*"
+                className="upload__image-input"
               />
             </figure>
           </section>
