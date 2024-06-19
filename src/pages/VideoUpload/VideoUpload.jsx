@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../../utils/config";
 import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import Button from "../../components/Button/Button";
 import Alert from "../../components/Alert/Alert";
@@ -10,8 +11,6 @@ const initialValues = {
   title: "",
   description: "",
 };
-
-const API_URL = import.meta.env.VITE_API_URL;
 
 const VideoUpload = () => {
   const [values, setValues] = useState(initialValues);

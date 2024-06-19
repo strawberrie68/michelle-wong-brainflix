@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { formatLikes } from "../../utils/utils.js";
+import { API_URL } from "../../utils/config.js";
 
 import VideoCard from "../../components/VideoCard/VideoCard.jsx";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer.jsx";
 import VideoDetails from "../../components/VideoDetails/VideoDetails.jsx";
 import CommentSection from "../../components/CommentSection/CommentSection.jsx";
 
-const API_URL = import.meta.env.VITE_API_URL;
 
 const VideoPage = () => {
   const [isLoading, setIsLoading] = useState(true);
