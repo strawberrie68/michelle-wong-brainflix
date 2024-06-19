@@ -18,6 +18,8 @@ const VideoUpload = () => {
   const [alertStatus, setAlertStatus] = useState(null);
   const [message, setMessage] = useState("");
   const [file, setFile] = useState();
+  const [preview, setPreview] = useState(null);
+
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -75,7 +77,11 @@ const VideoUpload = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
+
+    const previewURL = URL.createObjectURL(file);
+    setPreview(previewURL);
   };
+
   return (
     <main className="upload section-wrapper">
       <h1 className="upload__title">Upload Video</h1>
@@ -88,7 +94,7 @@ const VideoUpload = () => {
             <figure className="upload__preview">
               <img
                 className="upload__image"
-                src={VideoThumbnail}
+                src={preview || VideoThumbnail}
                 alt="video image preview"
               />
               <input

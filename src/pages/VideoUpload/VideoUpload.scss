@@ -52,6 +52,8 @@
 
   &__image {
     max-width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 
     @include tablet {
       max-width: 50%;
@@ -104,6 +106,10 @@
       @include tablet {
         padding-top: $gap-small;
       }
+      @include desktop {
+        height: 5.5rem;
+        padding-top: $gap-small;
+      }
 
       &::placeholder {
         font-weight: 500;
@@ -117,6 +123,25 @@
     @include tablet {
       flex-direction: row-reverse;
       margin-top: $gap-medium;
+    }
+  }
+  &__preview {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-x-small;
+    margin-bottom: $gap-small;
+    position: relative;
+  }
+
+  &__image-input {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    color: $secondary-light;
+
+    &::file-selector-button {
+      border-radius: $border-radius;
+      border: none;
     }
   }
 }
