@@ -4,10 +4,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { API_URL } from "../../utils/config";
 
 const VideoCard = ({ video = {}, handleClick, isLoading }) => {
-  const { image, title, channel } = video;
+  const { image, title, channel, id } = video;
   return (
     <SkeletonTheme color="#E1E1E1" highlightColor="#E1E1E1">
-      <article className="video-card" onClick={handleClick}>
+      <article className="video-card" onClick={() => handleClick(id)}>
         <div
           className={
             isLoading ? "video-card--loading" : "video-card__image-container"

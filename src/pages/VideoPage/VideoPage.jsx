@@ -1,7 +1,7 @@
 import "./VideoPage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { formatLikes } from "../../utils/utils.js";
 import { API_URL } from "../../utils/config.js";
 
@@ -102,13 +102,19 @@ const VideoPage = () => {
 
   useEffect(() => {
     getVideos();
-  }, [videoId]);
+  }, []);
 
   useEffect(() => {
-    if (selectedVideoId) {
-      fetchVideoDetails();
+    fetchVideoDetails();
+  }, [videoId, selectedVideoId]);
+
+  useEffect(() => {
+    if (videoId) {
+      setSelectedVideoId(videoId);
+    } else if (videos.length > 0) {
+      setSelectedVideoId(videos[0].id);
     }
-  }, [selectedVideoId]);
+  }, [videoId, videos]);
 
   if (error) {
     return <p className="section-wrapper">{error}</p>;
