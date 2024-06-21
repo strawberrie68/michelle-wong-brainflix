@@ -6,9 +6,11 @@ import { API_URL } from "../../utils/config";
 const VideoCard = ({ video = {}, handleClick, isLoading }) => {
   const { image, title, channel, id } = video;
   return (
+    // SkeletonTheme is used to style the loading skeleton
+
     <SkeletonTheme color="#E1E1E1" highlightColor="#E1E1E1">
       <article className="video-card" onClick={() => handleClick(id)}>
-        <div
+        <section
           className={
             isLoading ? "video-card--loading" : "video-card__image-container"
           }
@@ -22,11 +24,11 @@ const VideoCard = ({ video = {}, handleClick, isLoading }) => {
               alt={`${title} Video Thumbnail`}
             />
           )}
-        </div>
-        <div className="video-card__body">
+        </section>
+        <section className="video-card__body">
           <h3 className="video-card__title">{title || <Skeleton />}</h3>
           <p className="video-card__channel">{channel || <Skeleton />}</p>
-        </div>
+        </section>
       </article>
     </SkeletonTheme>
   );

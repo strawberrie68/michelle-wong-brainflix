@@ -8,6 +8,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 const VideoDetails = ({ video, isLoading, handleVideoLike }) => {
   const { title, channel, timestamp, views, likes, description } = video;
   return (
+    // SkeletonTheme is used to style the loading skeleton
+
     <SkeletonTheme color="#E1E1E1" highlightColor="#E1E1E1">
       <article className="video-details section-wrapper">
         <h1 className="video-details__title">{title || <Skeleton />}</h1>
@@ -18,11 +20,14 @@ const VideoDetails = ({ video, isLoading, handleVideoLike }) => {
                 {channel ? `By ${channel}` : <Skeleton />}
               </p>
             </div>
-            <div className="video-details__date">
+            <time
+              datetime={`${new Date(timestamp)}`}
+              className="video-details__date"
+            >
               <p className="video-details__info">
                 {timestamp ? convertTimestamp(timestamp) : <Skeleton />}
               </p>
-            </div>
+            </time>
           </div>
           {!isLoading && (
             <div className="video-details__metadata--right">

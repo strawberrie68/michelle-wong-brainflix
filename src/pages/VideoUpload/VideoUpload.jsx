@@ -133,7 +133,7 @@ const VideoUpload = () => {
             />
           </section>
         </fieldset>
-        <div className="upload__footer">
+        <section className="upload__footer">
           <Button
             type="submit"
             icon="publish"
@@ -147,7 +147,7 @@ const VideoUpload = () => {
             isPrimary={false}
             handleCancelForm={handleCancelForm}
           />
-        </div>
+        </section>
       </form>
     </main>
   );
