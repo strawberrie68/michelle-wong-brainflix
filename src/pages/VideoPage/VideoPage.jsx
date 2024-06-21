@@ -61,7 +61,7 @@ const VideoPage = () => {
   const handleCommentSubmit = async (comment) => {
     try {
       await axios.post(
-        `${API_URL}/videos/${selectedVideoId}/comments`,
+        `${API_URL}/comments/${selectedVideoId}/comments`,
         comment
       );
       fetchVideoDetails();
@@ -76,7 +76,7 @@ const VideoPage = () => {
   const handleDeleteComment = async (commentId) => {
     try {
       await axios.delete(
-        `${API_URL}/videos/${selectedVideoId}/comments/${commentId}`
+        `${API_URL}/comments/${selectedVideoId}/comments/${commentId}`
       );
       fetchVideoDetails();
     } catch (error) {
