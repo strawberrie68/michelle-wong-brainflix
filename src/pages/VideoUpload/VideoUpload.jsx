@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../utils/config";
-import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
+
 import Button from "../../components/Button/Button";
 import Alert from "../../components/Alert/Alert";
 import axios from "axios";
 import "./VideoUpload.scss";
 
+const DEFAULT_IMAGE_PATH = "/images/Upload-video-preview.jpg";
+
 const initialValues = {
   title: "",
   description: "",
-  image: "/images/Upload-video-preview.jpg",
+  image: DEFAULT_IMAGE_PATH,
 };
 
 const VideoUpload = () => {
@@ -54,7 +56,11 @@ const VideoUpload = () => {
       setMessage("Error: Please fill out all the fields");
       return;
     }
-    const videoData = { ...values, image: file };
+    const videoData = {
+      ...values,
+      image: file ? file : DEFAULT_IMAGE_PATH,
+    };
+
     postVideo(videoData);
     setValues(initialValues);
     setFile(null);
@@ -94,7 +100,7 @@ const VideoUpload = () => {
             <figure className="upload__preview">
               <img
                 className="upload__image"
-                src={preview || VideoThumbnail}
+                src={preview || API_URL + "/images/Upload-video-preview.jpg"}
                 alt="video image preview"
               />
               <input
