@@ -22,13 +22,16 @@ const VideoPage = () => {
     setError(message);
     console.error({ error });
   };
+  const getVideoId = (videos) => {
+    return videoId ? videoId : videos[0].id;
+  };
 
   const getVideos = async () => {
     try {
       const response = await axios.get(`${API_URL}/videos`);
       setVideos(response.data);
-      setSelectedVideoId(videoId || response.data[0].id);
       setIsLoading(false);
+      setSelectedVideoId(getVideoId(response.data));
     } catch (error) {
       handleError(
         error,
@@ -38,6 +41,7 @@ const VideoPage = () => {
   };
 
   const fetchVideoDetails = async () => {
+    setSelectedVideoId(getVideoId(videos));
     try {
       const response = await axios.get(`${API_URL}/videos/${selectedVideoId}`);
       setSelectedVideo(response.data);
@@ -107,14 +111,6 @@ const VideoPage = () => {
   useEffect(() => {
     fetchVideoDetails();
   }, [videoId, selectedVideoId]);
-
-  useEffect(() => {
-    if (videoId) {
-      setSelectedVideoId(videoId);
-    } else if (videos.length > 0) {
-      setSelectedVideoId(videos[0].id);
-    }
-  }, [videoId, videos]);
 
   if (error) {
     return <p className="section-wrapper">{error}</p>;
