@@ -8,9 +8,9 @@ const Comment = ({ commentData, handleDeleteComment }) => {
 
   return (
     <article className="comment" id={id}>
-      <div className="comment__avatar">
+      <section className="comment__avatar">
         <Avatar isDefault={true} />
-      </div>
+      </section>
       <section className="comment__details">
         <div className="comment__info">
           <p className="comment__author">{name}</p>

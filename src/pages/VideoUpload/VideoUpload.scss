@@ -108,6 +108,7 @@
       @include tablet {
         padding-top: $gap-small;
       }
+
       @include desktop {
         height: 5.5rem;
         padding-top: $gap-small;
@@ -127,6 +128,7 @@
       margin-top: $gap-medium;
     }
   }
+
   &__preview {
     display: flex;
     flex-direction: column;
