@@ -13,6 +13,7 @@
 
     @include desktop {
       margin: 0 auto;
+      height: 31.25rem;
     }
   }
 
@@ -32,7 +33,7 @@
 
     @include desktop {
       @include section-max-width;
-      max-width: 67vw;
+      max-width: 55.625rem;
     }
   }
 }
