@@ -96,7 +96,7 @@ const VideoUpload = () => {
         <fieldset className="upload__body">
           <legend className="visually-hidden">Upload Video</legend>
           <section className="upload__thumbnail-section">
-            <p className="upload__label label-text">VIDEO THUMBNAIL</p>
+            <p className="upload__label">VIDEO THUMBNAIL</p>
             <figure className="upload__preview">
               <img
                 className="upload__image"
@@ -113,7 +113,7 @@ const VideoUpload = () => {
           </section>
 
           <section className="upload__form-section">
-            <label htmlFor="title" className="upload__label label-text">
+            <label htmlFor="title" className="upload__label">
               TITLE YOUR VIDEO
             </label>
             <input
@@ -126,7 +126,7 @@ const VideoUpload = () => {
               onChange={handleInputChange}
             />
 
-            <label htmlFor="description" className="label-text upload__label">
+            <label htmlFor="description" className="upload__label">
               ADD A VIDEO DESCRIPTION
             </label>
             <textarea
