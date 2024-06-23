@@ -4,6 +4,7 @@
 .video-details {
   &__title {
     @include desktop-border-padding-right;
+    max-width: 21em;
   }
 
   &__metadata {

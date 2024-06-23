@@ -32,6 +32,8 @@
     margin: 0;
     font-weight: 600;
     color: $primary-dark;
+    max-width: 21ch;
+    line-height: 1.125rem;
   }
 
   &--loading {
